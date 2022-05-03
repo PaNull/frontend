@@ -1,0 +1,38 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<div>
+    <div>
+        <h3>Criar Conta</h3>
+        <form name="cadastrarUsuario">
+            <div>
+                <input type="text" name="nome">
+                <label for="nome">Nome:</label>
+            </div>
+
+            <div>
+                <input type="date" name="dataNascimento">
+                <label for="dataNascimento">Aniversario</label>
+            </div>
+
+            <div>
+                <input type="text" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+                <label for="cpf">CPF</label>
+            </div>
+            
+            <div>
+                <input type="text" name="nacionalidade">
+                <label for="nacionalidade">Nacionalidade</label>
+            </div>
+           
+            <div>
+                <input type="password" name="senha">
+                <label for="senha">Senha</label>
+            </div>
+
+            <button onclick="createUser()">Cadastrar</button>
+        </form>
+     
+    </div>
+</div>
