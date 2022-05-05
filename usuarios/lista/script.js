@@ -18,11 +18,9 @@ const createRows = () => {
 }
 
 const getUsers = () => {
-    var url = 'https://cors-anywhere.herokuapp.com/https://fho-project-application.herokuapp.com/php_action/user/getAll.php';
-
     const request = {
         type:'GET',
-        url,
+        url:'../../php_action/user/getAll.php',
         success: function(data) {
             list = JSON.parse(data);
             console.log(list)
@@ -35,7 +33,7 @@ const getUsers = () => {
 const deleteUser = (id_usuario) => {
     const request = {
         type:'POST',
-        url:'https://cors-anywhere.herokuapp.com/https://fho-project-application.herokuapp.com/php_action/user/delete.php',
+        url:'../../php_action/user/delete.php',
         data:{ id_usuario },
         success: function(data) {
             console.log(data)

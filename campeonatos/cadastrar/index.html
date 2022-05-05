@@ -1,18 +1,24 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="../../Style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./script.js"></script>
 </head>
-<div>
-    <div>
+<div class="cadastro">
+    <div class="content">
         <h3>Novo Campeonato</h3>
 
         <form name="cadastrarCampeonato">
-            <div>
-                <input type="text" name="nome">
-                <label for="nome">Nome do Campeonato</label>
-            </div>
-            <div>
 
+            <p>
+            <div>
+                <label for="nome">Nome do Campeonato</label>
+                <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
+            </div>
+            </p>
+
+            <p>
+            <div>
+                <label for="modalidade">Modalidade</label>
                 <select name="modalidade">
                     <option value="" disabled selected>Selecione a modalidade:</option>
                     <option value="1">Basquete</option>
@@ -20,26 +26,35 @@
                     <option value="3">Futsal</option>
                     <option value="4">Vôlei</option>
                 </select>
-                <label for="modalidade">Modalidade</label>
             </div>
+            </p>
 
+            <p>
             <div>
-                <input type="text" name="premiacao">
                 <label for="premiacao">Premiação</label>
+                <input type="text" name="premiacao" placeholder="Digite a Premiação">
             </div>  
+            </p>
 
+            <p>
             <div>
-                <input type="date" name="dataCampeonato">
                 <label for="dataCampeonato">Data do campeonato</label>
+                <input type="date" name="dataCampeonato">
               
             </div>
+            </p>
 
+            <p>
             <div>
-                <input type="number" name="qtdTimes"min="2" max="300">
                 <label for="qtdTimes">Quantidade de times</label>
+                <input type="number" name="qtdTimes"min="2" max="300" placeholder="Digite a Quantidade de Times">
             </div>     
-            
+            </p>
+
+            <p>
             <button onclick="createTournament()">Cadastrar</button>
+            </p>
+
         </form>
      
     </div>

@@ -20,7 +20,7 @@ const createRows = () => {
 const getTournaments = () => {
     const request = {
         type:'GET',
-        url:'https://cors-anywhere.herokuapp.com/https://fho-project-application.herokuapp.com/php_action/tournament/getAll.php',
+        url:'../../php_action/tournament/getAll.php',
         success: function(data) {
             list = JSON.parse(data);
             console.log(list)
@@ -33,7 +33,7 @@ const getTournaments = () => {
 const deleteTournament = (id_campeonato) => {
     const request = {
         type:'POST',
-        url:'https://cors-anywhere.herokuapp.com/https://fho-project-application.herokuapp.com/php_action/tournament/delete.php',
+        url:'../../php_action/tournament/delete.php',
         data:{ id_campeonato },
         success: function(data) {
             console.log(data)

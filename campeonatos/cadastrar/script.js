@@ -9,7 +9,7 @@ const createTournament = () => {
     }
     const request = {
         type:'POST',
-        url:'https://cors-anywhere.herokuapp.com/https://fho-project-application.herokuapp.com/php_action/tournament/create.php',
+        url:'../../php_action/tournament/create.php',
         data: payload,
         success: function(data) {
             console.log(data)

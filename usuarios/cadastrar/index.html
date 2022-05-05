@@ -1,37 +1,51 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="../../Style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./script.js"></script>
 </head>
-<div>
-    <div>
+<div class="cadastro">
+    <div class="content">
         <h3>Criar Conta</h3>
         <form name="cadastrarUsuario">
-            <div>
-                <input type="text" name="nome">
-                <label for="nome">Nome:</label>
-            </div>
+            <p>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Digite seu Nome">
+                </div>
+            </p>
 
-            <div>
-                <input type="date" name="dataNascimento">
-                <label for="dataNascimento">Aniversario</label>
-            </div>
+            <p>
+                <div>
+                    <label for="dataNascimento">Aniversario</label>
+                    <input type="date" name="dataNascimento" placeholder="Digite sua Data de nascimento">
+                </div>
+            </p>
 
-            <div>
-                <input type="text" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
-                <label for="cpf">CPF</label>
-            </div>
-            
-            <div>
-                <input type="text" name="nacionalidade">
-                <label for="nacionalidade">Nacionalidade</label>
-            </div>
-           
-            <div>
-                <input type="password" name="senha">
-                <label for="senha">Senha</label>
-            </div>
+            <p>
+                <div>
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" placeholder="Digite seu CPF" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+                </div>
+            </p>
 
+            <p>   
+                <div>
+                    <label for="nacionalidade">Nacionalidade</label>
+                    <input type="text" name="nacionalidade" placeholder="Digite sua Nacionalidade">
+                </div>
+            </p>
+
+            <p>
+                <div>
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Digite sua Senha">
+                </div>
+            </p>
+
+            <p>
             <button onclick="createUser()">Cadastrar</button>
+            </p>
+
         </form>
      
     </div>
