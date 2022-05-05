@@ -20,33 +20,30 @@ const createRows = () => {
 const getTournaments = () => {
     const request = {
         type:'GET',
-        url:'../../php_action/tournament/getAll.php',
-        success: function(data) {
-            list = JSON.parse(data);
-            console.log(list)
+        url: `${URL_API}tournaments`,
+        success: function(response) {
+            list = response.data;
             createRows()
         }
     };
     $.ajax(request);
 }
 
-const deleteTournament = (id_campeonato) => {
+const deleteTournament = (id) => {
     const request = {
-        type:'POST',
-        url:'../../php_action/tournament/delete.php',
-        data:{ id_campeonato },
-        success: function(data) {
-            console.log(data)
-
-            if(data=="YES"){
-                location.reload();
-            } else{
-                alert("can't delete the row")
-            }
+        type:'DELETE',
+        url: `${URL_API}tournament/${id}`,
+        success: (response) => {
+            getUsers();
+            alert(response.message);
+        },
+        error: (response, status, error) => {
+            alert(response.message);
         }
     };
     
     $.ajax(request);
 }
+
 
 getTournaments()

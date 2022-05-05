@@ -1,13 +1,12 @@
 var values = { };
-const id_usuario = location.search.slice(1);
+const id = location.search.slice(1);
 
 const getUser = () => {
     const request = {
         type:'GET',
-        url:'../../php_action/user/getById.php',
-        data: { id_usuario },
-        success: function(data) {
-            values = JSON.parse(data);
+        url:`${URL_API}user/${id}`,
+        success: function(response) {
+            values = response.data;
         }
     };
     $.ajax(request);
@@ -16,24 +15,19 @@ const getUser = () => {
 const updateUser = () => {
     const formValues = document.forms.updateUser
     const payload = {
-        id_usuario,
+        id,
         nome: formValues.nome.value,
         dataNascimento: formValues.dataNascimento.value,
         cpf: formValues.cpf.value,
         nacionalidade: formValues.nacionalidade.value
     }
     const request = {
-        type:'POST',
-        url:'../../php_action/user/update.php',
+        type:'PUT',
+        url:`${URL_API}user`,
+        dataType: "json",
         data: payload,
-        success: function(data) {
-            console.log(data)
-
-            if(data=="YES"){
-                alert("Usuario Ataulizado")
-            } else{
-                alert("can't update user")
-            }
+        success: function(response) {
+            alert(response.message)
         }
     };
     $.ajax(request);

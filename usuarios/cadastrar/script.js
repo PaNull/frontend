@@ -9,16 +9,11 @@ const createUser = () => {
     }
     const request = {
         type:'POST',
-        url:'../../php_action/user/create.php',
+        url:`${URL_API}user`,
+        dataType: "json",
         data: payload,
-        success: function(data) {
-            console.log(data)
-
-            if(data=="YES"){
-                alert("Usuario Criado")
-            } else{
-                alert("can't create user")
-            }
+        success: function(response) {
+            alert(response.message)
         }
     };
     $.ajax(request);

@@ -9,16 +9,11 @@ const createTournament = () => {
     }
     const request = {
         type:'POST',
-        url:'../../php_action/tournament/create.php',
+        url:`${URL_API}tournament`,
+        dataType: "json",
         data: payload,
-        success: function(data) {
-            console.log(data)
-
-            if(data=="YES"){
-                alert("Campeonato Criado")
-            } else{
-                alert("can't create tournament")
-            }
+        success: function(response) {
+            alert(response.message)
         }
     };
     $.ajax(request);

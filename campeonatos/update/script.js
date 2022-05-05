@@ -1,13 +1,12 @@
 var values = { };
-const id_campeonato = location.search.slice(1);
+const id = location.search.slice(1);
 
 const getTournament = () => {
     const request = {
         type:'GET',
-        url:'../../php_action/user/getById.php',
-        data: { id_campeonato },
-        success: function(data) {
-            values = JSON.parse(data);
+        url:`${URL_API}tournament/${id}`,
+        success: function(response) {
+            values = response.data;
         }
     };
     $.ajax(request);
@@ -24,21 +23,17 @@ const updateTournament = () => {
         qtdTimes: formValues.qtdTimes.value,
     }
     const request = {
-        type:'POST',
-        url:'../../php_action/user/update.php',
+        type:'PUT',
+        url:`${URL_API}tournament`,
+        dataType: "json",
         data: payload,
-        success: function(data) {
-            console.log(data)
-
-            if(data=="YES"){
-                alert("Usuario Ataulizado")
-            } else{
-                alert("can't update user")
-            }
+        success: function(response) {
+            alert(response.message)
         }
     };
     $.ajax(request);
 }
+
 
 getTournament()
 

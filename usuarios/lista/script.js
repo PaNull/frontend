@@ -20,29 +20,25 @@ const createRows = () => {
 const getUsers = () => {
     const request = {
         type:'GET',
-        url:'../../php_action/user/getAll.php',
-        success: function(data) {
-            list = JSON.parse(data);
-            console.log(list)
+        url: `${URL_API}users`,
+        success: function(response) {
+            list = response.data;
             createRows()
         }
     };
     $.ajax(request);
 }
 
-const deleteUser = (id_usuario) => {
+const deleteUser = (id) => {
     const request = {
-        type:'POST',
-        url:'../../php_action/user/delete.php',
-        data:{ id_usuario },
-        success: function(data) {
-            console.log(data)
-
-            if(data=="YES"){
-                location.reload();
-            } else{
-                alert("can't delete the row")
-            }
+        type:'DELETE',
+        url: `${URL_API}user/${id}`,
+        success: (response) => {
+            getUsers();
+            alert(response.message);
+        },
+        error: (response, status, error) => {
+            alert(response.message);
         }
     };
     
