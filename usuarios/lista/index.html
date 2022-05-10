@@ -5,19 +5,37 @@
 </head>
 
 <div>
+    <div id="especificUser">
+        <h3>Pesquisar por usuário específico</h3>
+        Insira o ID do usuário: <input type="number" min="0" id="idUser">
+        <button type="submit" onclick="teste()">Pesquisar</button>
+
+        <table id="table_especific">
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+
     <div>
         <h3>Usuarios Cadastrados</h3>
         <table>
             <thead>
                 <tr>
+                    <th>Id:</th>
                     <th>Nome:</th>
-                    <th>Cargo</th>
+                    <th>Cargo:</th>
                     <th>CPF</th> 
                     <th>Aniversario</th>
                     <th>Nacionalidade</th>
                     <th></th>
                 </tr>
             </thead>
+            <tbody id="table_especific">
+                <tr></tr>
+            </tbody>
 
             <tbody id="table_body">
                 <tr></tr>
