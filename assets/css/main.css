@@ -1539,43 +1539,6 @@ input, select, textarea {
 				display: none;
 			}
 
-	.dropotron {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0)), url("images/bg02.png");
-		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0)), url("images/bg02.png");
-		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0)), url("images/bg02.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0)), url("images/bg02.png");
-		position: relative;
-		background-color: #3B3E45;
-		background-color: rgba(59, 62, 69, 0.9);
-		border-radius: 8px;
-		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 0px 0px 2px rgba(255, 255, 255, 0.075), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 14px 0px rgba(0, 0, 0, 0.4);
-		text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
-		padding: 1.5em;
-		line-height: 2.5em;
-		min-width: 15em;
-	}
-
-		.dropotron.level-0 {
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			margin-top: -2px;
-			box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 0px 0px 2px rgba(255, 255, 255, 0.075), 0px 2px 14px 0px rgba(0, 0, 0, 0.4);
-		}
-
-		.dropotron a, .dropotron span {
-			color: #aaa;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-weight: 800;
-			font-size: 0.8em;
-			letter-spacing: 0.075em;
-			outline: 0;
-		}
-
-		.dropotron li:hover > a, .dropotron li:hover > span {
-			color: #fff;
-		}
-
 /* Banner */
 
 	#banner {
@@ -1683,15 +1646,7 @@ input, select, textarea {
 			background-position: top center, bottom center, top left;
 		}
 
-		.wrapper.style3 {
-			position: relative;
-			text-shadow: 1px 1px 0 #fff;
-			background-color: #fff;
-			background-image: url("images/bg03.png"), url("images/bg02.png");
-			background-repeat: no-repeat, repeat;
-			background-size: 100% 15em, auto auto;
-			background-position: top center, top left;
-		}
+
 
 /* Header */
 
@@ -1722,6 +1677,38 @@ input, select, textarea {
 			margin-top: -0.65em;
 			font-size: 1.5em;
 			color: #fff;
+		}
+
+		.create-tournament{
+			display: grid;
+			width: 100%;
+		}
+
+		.text-create-tournament{
+			justify-content: center;
+			justify-items: center;
+			align-items: center;
+			text-align: center;
+			text-shadow: 2px 2px #000000;
+			color: #ffffff !important;
+		}
+
+		.btn-create-tournament{
+			text-shadow: none;
+			height: 2vh;
+			text-align: center;
+			width: 160px;
+			height: 40px;
+			line-height: 40px;
+			padding: 10px 5px;
+			margin: 20px;
+			background-color: #4091bf;
+			box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.45), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.15);
+			color: #FFF;
+			border-radius: 5px;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
 		}
 
 /* Footer */
@@ -1756,20 +1743,6 @@ input, select, textarea {
 
 		#footer dl.contact dt {
 			color: #ddd;
-		}
-
-	#copyright {
-		border-top: solid 1px;
-		border-color: #444;
-		border-color: rgba(255, 255, 255, 0.075);
-		text-align: center;
-		margin-top: 2em;
-		padding: 3em 0 4em 0;
-		color: inherit;
-	}
-
-		#copyright a {
-			color: inherit;
 		}
 
 /* Large */
@@ -1848,31 +1821,6 @@ input, select, textarea {
 			}
 
 		/* Nav */
-
-			#titleBar {
-				-moz-backface-visibility: hidden;
-				-webkit-backface-visibility: hidden;
-				-ms-backface-visibility: hidden;
-				backface-visibility: hidden;
-				background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
-				background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
-				background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
-				background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
-				-moz-transition: -moz-transform 0.5s ease;
-				-webkit-transition: -webkit-transform 0.5s ease;
-				-ms-transition: -ms-transform 0.5s ease;
-				transition: transform 0.5s ease;
-				background-color: rgba(59, 62, 69, 0.9);
-				box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 0px 0px 2px rgba(255, 255, 255, 0.075), 0px 1px 6px 0px rgba(0, 0, 0, 0.35);
-				display: block;
-				height: 44px;
-				left: 0;
-				position: fixed;
-				text-shadow: -1px -1px 0 black;
-				top: 0;
-				width: 100%;
-				z-index: 10001;
-			}
 
 				#titleBar .title {
 					display: block;
