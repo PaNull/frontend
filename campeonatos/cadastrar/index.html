@@ -1,62 +1,87 @@
 <head>
+    <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../../Style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../globals.js"></script>
     <script src="./script.js"></script>
 </head>
-<div class="cadastro">
-    <div class="content">
-        <h3>Novo Campeonato</h3>
 
-        <form name="cadastrarCampeonato">
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
 
-            <p>
-            <div>
-                <label for="nome">Nome do Campeonato</label>
-                <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
-            </div>
-            </p>
+            <!-- Logo -->
+                <h1><a href="../../index.html" id="logo">PA NULL</a></h1>
 
-            <p>
-            <div>
-                <label for="modalidade">Modalidade</label>
-                <select name="modalidade">
-                    <option value="" disabled selected>Selecione a modalidade:</option>
-                    <option value="1">Basquete</option>
-                    <option value="2">Futebol</option>
-                    <option value="3">Futsal</option>
-                    <option value="4">Vôlei</option>
-                </select>
-            </div>
-            </p>
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current_page_item"><a href="../../index.html">Home</a></li>
+                        <li><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
+                        <li><a href="../../usuarios/cadastrar/index.html">Cadastrar/Logar</a></li>
+                        <li><a href="../lista/index.html">Torneios em Andamento</a></li>
+                        <li><a href="#">Meu Perfil</a></li>
+                        <!-- <li><a href="./usuarios/lista/index.html">Meu Perfil</a></li> 
+                        = Lista de Usuários Cadastrados  -->
+                    </ul>
+                </nav>
+        </div>
+    </header>
 
-            <p>
-            <div>
-                <label for="premiacao">Premiação</label>
-                <input type="text" name="premiacao" placeholder="Digite a Premiação">
-            </div>  
-            </p>
+    <div class="cadastro">
+        <div class="content">
+            <h3>Novo Campeonato</h3>
 
-            <p>
-            <div>
-                <label for="dataCampeonato">Data do campeonato</label>
-                <input type="date" name="dataCampeonato">
-              
-            </div>
-            </p>
+            <form name="cadastrarCampeonato">
 
-            <p>
-            <div>
-                <label for="qtdTimes">Quantidade de times</label>
-                <input type="number" name="qtdTimes"min="2" max="300" placeholder="Digite a Quantidade de Times">
-            </div>     
-            </p>
+                <p>
+                <div>
+                    <label for="nome">Nome do Campeonato</label>
+                    <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
+                </div>
+                </p>
 
-            <p>
-            <button onclick="createTournament()">Cadastrar</button>
-            </p>
+                <p>
+                <div>
+                    <label for="modalidade">Modalidade</label>
+                    <select name="modalidade">
+                        <option value="" disabled selected>Selecione a modalidade:</option>
+                        <option value="1">Basquete</option>
+                        <option value="2">Futebol</option>
+                        <option value="3">Futsal</option>
+                        <option value="4">Vôlei</option>
+                    </select>
+                </div>
+                </p>
 
-        </form>
-     
+                <p>
+                <div>
+                    <label for="premiacao">Premiação</label>
+                    <input type="text" name="premiacao" placeholder="Digite a Premiação">
+                </div>  
+                </p>
+
+                <p>
+                <div>
+                    <label for="dataCampeonato">Data do campeonato</label>
+                    <input type="date" name="dataCampeonato">
+                
+                </div>
+                </p>
+
+                <p>
+                <div>
+                    <label for="qtdTimes">Quantidade de times</label>
+                    <input type="number" name="qtdTimes"min="2" max="300" placeholder="Digite a Quantidade de Times">
+                </div>     
+                </p>
+
+                <p>
+                <button onclick="createTournament()">Cadastrar</button>
+                </p>
+
+            </form>
+        
+        </div>
     </div>
-</div>

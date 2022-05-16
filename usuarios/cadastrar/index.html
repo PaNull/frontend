@@ -1,53 +1,77 @@
 <head>
+    <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../../Style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../globals.js"></script>
     <script src="./script.js"></script>
 </head>
-<div class="cadastro">
-    <div class="content">
-        <h3>Criar Conta</h3>
-        <form name="cadastrarUsuario">
-            <p>
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Digite seu Nome">
-                </div>
-            </p>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
 
-            <p>
-                <div>
-                    <label for="dataNascimento">Aniversario</label>
-                    <input type="date" name="dataNascimento" placeholder="Digite sua Data de nascimento">
-                </div>
-            </p>
+            <!-- Logo -->
+                <h1><a href="../../index.html" id="logo">PA NULL</a></h1>
 
-            <p>
-                <div>
-                    <label for="cpf">CPF</label>
-                    <input type="text" name="cpf" placeholder="Digite seu CPF" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
-                </div>
-            </p>
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current_page_item"><a href="../../index.html">Home</a></li>
+                        <li><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
+                        <li><a href="../../usuarios/cadastrar/index.html">Cadastrar/Logar</a></li>
+                        <li><a href="../lista/index.html">Torneios em Andamento</a></li>
+                        <li><a href="#">Meu Perfil</a></li>
+                        <!-- <li><a href="./usuarios/lista/index.html">Meu Perfil</a></li> 
+                        = Lista de Usuários Cadastrados  -->
+                    </ul>
+                </nav>
+        </div>
+    </header>
+    <div class="cadastro">
+        <div class="content">
+            <h3>Criar Conta</h3>
+            <form name="cadastrarUsuario">
+                <p>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" placeholder="Digite seu Nome">
+                    </div>
+                </p>
 
-            <p>   
-                <div>
-                    <label for="nacionalidade">Nacionalidade</label>
-                    <input type="text" name="nacionalidade" placeholder="Digite sua Nacionalidade">
-                </div>
-            </p>
+                <p>
+                    <div>
+                        <label for="dataNascimento">Aniversario</label>
+                        <input type="date" name="dataNascimento" placeholder="Digite sua Data de nascimento">
+                    </div>
+                </p>
 
-            <p>
-                <div>
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" placeholder="Digite sua Senha">
-                </div>
-            </p>
+                <p>
+                    <div>
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" placeholder="Digite seu CPF" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+                    </div>
+                </p>
 
-            <p>
-            <button onclick="createUser()">Cadastrar</button>
-            </p>
+                <p>   
+                    <div>
+                        <label for="nacionalidade">Nacionalidade</label>
+                        <input type="text" name="nacionalidade" placeholder="Digite sua Nacionalidade">
+                    </div>
+                </p>
 
-        </form>
-     
+                <p>
+                    <div>
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Digite sua Senha">
+                    </div>
+                </p>
+
+                <p>
+                <button onclick="createUser()">Cadastrar</button>
+                </p>
+
+            </form>
+        
+        </div>
     </div>
-</div>
+</body>
