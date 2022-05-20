@@ -3,19 +3,9 @@ var list = [];
 var list2 = [];
 
 const createRowsEspecific = () => {
+    document.getElementById("table_especific").style.display = 'table';
     list2.forEach(data => {
         row = `
-        <thead>
-            <tr>
-                <th>Nome:</th>
-                <th>E-mail:</th>
-                <th>Cargo:</th>
-                <th>CPF</th> 
-                <th>Aniversario</th>
-                <th>Nacionalidade</th>
-                <th></th>
-            </tr>
-         </thead>
             <tr>
                 <td> ${ data.nome } </td>
                 <td> ${ data.email } </td>
@@ -25,9 +15,9 @@ const createRowsEspecific = () => {
                 <td> ${ data.nacionalidade } </td>
                 <td> <button onclick="deleteUser(${ data.id_usuario })">Excluir Usuario</button></td>
                 <td><a href="${data.link}">Editar Usuario</a></td>
-            </tr>
+            </tr> 
         `
-        $("#table_especific tr:last").after(row) ;
+        $("#table_especific tbody").append(row);
     })
 }
 
@@ -81,9 +71,13 @@ const getEspecificUser = (id) => {
     const request = {
         type:'GET',
         url: `${URL_API}user/${id}`,
-        success: function(response) {
-            list2 = [response.data];
+        success: function({ data }) {
+            list2 = [data];
             createRowsEspecific()
+        },
+        error: () => {
+            document.getElementById("table_especific").style.display = 'none';
+            alert('Se ferrou babaca')
         }
     };
 
@@ -94,16 +88,15 @@ const getEspecificUser = (id) => {
 getUsers();
 
 function teste(){
-
-    clearScreen();
-
     var input = document.getElementById("idUser").value;
 
-    alert(input);
-
+    clearScreen();
     getEspecificUser(input);
 }
 
 function clearScreen(){
-    $('#table_especific').html(""); //Limpando o resultado
+    if (list2.length) {
+        document.querySelector("#table_especific tbody").deleteRow(0);
+        list2 = []
+    }
 }

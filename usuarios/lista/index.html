@@ -10,10 +10,19 @@
         Insira o ID do usuário: <input type="number" min="0" id="idUser">
         <button type="submit" onclick="teste()">Pesquisar</button>
 
-        <table id="table_especific">
-            <tbody>
-                <tr></tr>
-            </tbody>
+        <table id="table_especific" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>E-mail:</th>
+                    <th>Cargo:</th>
+                    <th>CPF</th> 
+                    <th>Aniversario</th>
+                    <th>Nacionalidade</th>
+                    <th></th>
+                </tr>
+             </thead>
+             <tbody></tbody>
         </table>
     </div>
 
@@ -33,10 +42,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody id="table_especific">
-                <tr></tr>
-            </tbody>
-
+            
             <tbody id="table_body">
                 <tr></tr>
             </tbody>
