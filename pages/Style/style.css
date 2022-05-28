@@ -49,7 +49,7 @@ input, select:not([type="checkbox"]){
     background: #4ab3c6;
   }
 
-  .cadastro, .opcoes{
+  .cadastro, .opcoes, .list{
     position: center;
     width: 50%;
     padding: 30px;
