@@ -11,7 +11,7 @@ const pageLogin = 'usuarios/login/index'
 const pagePerfil = 'usuarios/perfil/index'
 
 //var login = "admin"
-var password = "123"
+//var password = "123"
 
 //fazendo com o que o express utilize as sessions
 app.use(session({
@@ -60,6 +60,7 @@ app.post('/', (req, res) => {
     
             res.render(pagePerfil, {
                 login: body.data.nome
+                
             });
             //vai para a pag meu perfil
             //passando login como parâmetro
@@ -85,7 +86,6 @@ app.get('/', (req, res) => {
         res.render(pageLogin) //não está logado -> não pode acessar a pág. Fica na pág de login
     }
 })
-
 
 
 //Criando o server
