@@ -13,11 +13,25 @@ const pagePerfil = 'usuarios/perfil/index'
 //var login = "admin"
 //var password = "123"
 
+
 //fazendo com o que o express utilize as sessions
 app.use(session({
     secret: 'dsaghf721365dgyb87d12giuby'
     //definindo o segredo da sessão (token)
-}));
+})); 
+
+
+//definindo o segredo da sessão (token) 
+let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+
+console.log(token);
+
+
+/* //fazendo com o que o express utilize as sessions
+app.use(session({
+    secret: token
+    //definindo o segredo da sessão (token)
+})); */
 
 
 //fazendo com que meu app tbm use o body-parser
@@ -49,7 +63,6 @@ app.post('/', (req, res) => {
     request(options, function (error, response, body) {
     
         console.log("Chegou 2", body);
-        console.log()
         
         if (body?.data) {
             
@@ -93,6 +106,21 @@ app.get('/', (req, res) => {
     }
 })
 
+
+//Definindo minha rota - Logout
+app.delete('/logout', (req, res) => {
+    if (req.session) {
+      req.session.destroy(err => {
+        if (err) {
+          res.status(400).send('Unable to log out')
+        } else {
+          res.send('Logout successful')
+        }
+      });
+    } else {
+      res.end()
+    }
+})
 
 //Criando o server
 app.listen(port, () => {
