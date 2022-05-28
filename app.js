@@ -59,11 +59,17 @@ app.post('/', (req, res) => {
             req.session.login = body.data.nome;
     
             res.render(pagePerfil, {
-                login: body.data.nome
-                
+                login: body.data.nome,
+                nome: body.data.nome,
+                email: body.data.email,
+                dataNasc: body.data.dataNascimento,
+                cpf: body.data.cpf,
+                nacionalidade: body.data.nacionalidade,
+                cargo: body.data.cargo                
             });
-            //vai para a pag meu perfil
-            //passando login como parâmetro
+
+            //vai para a pag meu perfil passando login, nome, email, dataNasc {...} como parâmetro
+
             console.log('O meu usuário logado é: ', body.data.nome);
         } else {
             res.render(pageLogin);

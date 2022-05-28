@@ -10,6 +10,30 @@
     <h2>Você está logado, <%= login %> !</h2> <br>
     <h1>Meu perfil:</h1>
 
-
+         <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome:</th><br>
+                        <th>E-mail:</th>
+                        <th>Cargo:</th>
+                        <th>CPF</th> 
+                        <th>Aniversario</th>
+                        <th>Nacionalidade</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                        <td><%= nome %></td>
+                        <td><%= email %></td>
+                        <td><%= cargo %></td>
+                        <td><%= cpf %></td>
+                        <td><%= dataNasc %></td>
+                        <td><%= nacionalidade %></td>
+                     </tr>
+                    
+                </tbody>
+            </table>
+        </div>
 </body>
 </html>
