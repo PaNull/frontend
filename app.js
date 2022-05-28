@@ -10,7 +10,7 @@ const app = express(); //chamando o express dentro da variável app
 const pageLogin = 'usuarios/login/index'
 const pagePerfil = 'usuarios/perfil/index'
 
-var login = "admin"
+//var login = "admin"
 var password = "123"
 
 //fazendo com o que o express utilize as sessions
@@ -56,14 +56,14 @@ app.post('/', (req, res) => {
             console.log("Entrou");
             //logado com sucesso
             //criando a sessão
-            req.session.login = login;
+            req.session.login = body.data.nome;
     
             res.render(pagePerfil, {
-                login: login
+                login: body.data.nome
             });
             //vai para a pag meu perfil
             //passando login como parâmetro
-            console.log('O meu usuário logado é: ' + body.data);
+            console.log('O meu usuário logado é: ', body.data.nome);
         } else {
             res.render(pageLogin);
         }
@@ -78,7 +78,7 @@ app.get('/', (req, res) => {
     //Verificando se está logado -> só acessa essa pág se estiver logado
     if (req.session.login) {
         res.render(pagePerfil, {
-            login: login
+            login: body.data.nome
         }) //vai para a pag meu perfil
         //passando login como parâmetro
     } else {
