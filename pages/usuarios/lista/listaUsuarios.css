@@ -24,6 +24,13 @@
     animation-fill-mode: both;
 }
 
+.btnPesquisar{
+    margin: 8px;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .btnExcluir{
     background-color: rgb(255, 126, 126);
     margin: 8px;
@@ -32,7 +39,7 @@
     padding-right: 8px;
 }
 
-.editarUsuario{
+#edtUser{
     color: rgb(255, 255, 255);
     border: 2px outset rgb(53, 70, 255);
     border-radius: 6px;
