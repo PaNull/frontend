@@ -9,13 +9,23 @@ const createRows = () => {
                 <td> ${ data.premiacao } </td>
                 <td> ${ data.dataCampeonato } </td>
                 <td> ${ data.qtdTimes } </td>
-                <td> <button onclick="deleteTournament(${ data.id_campeonato })">Excluir Campeonato</button></td>
-                <td><a href="${data.link}">Editar Campeonato</a></td>
+                <td> <button class="btnDeletar" onclick="deleteTournament(${ data.id_campeonato })">Excluir Campeonato</button></td>
+                <td><a href="${data.link}" class="editarCamp">Editar Campeonato</a></td>
             </tr>
         `
         $("#table_body tr:last").after(row) ;
     })
 }
+
+<tr>
+                <td> ${ data.nome } </td>
+                <td> ${ data.modalidade } </td>
+                <td> ${ data.premiacao } </td>
+                <td> ${ data.dataCampeonato } </td>
+                <td> ${ data.qtdTimes } </td>
+                <td> <button class="btnDeletar" onclick="deleteTournament(${ data.id_campeonato })">Excluir Campeonato</button></td>
+                <td><a href="${data.link}" class="editarCamp">Editar Campeonato</a></td>
+            </tr>
 
 const getTournaments = () => {
     const request = {

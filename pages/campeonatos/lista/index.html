@@ -1,50 +1,56 @@
 <head>
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../Style/style.css">
+    <title>Torneios em Andamento</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../globals.js"></script>
     <script src="./script.js"></script>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../Style/style.css">
+    <link rel="stylesheet" type="text/css" href="listacss.css">
 </head>
 <body>
+    
     <!-- Header -->
     <header id="header">
         <div class="inner">
 
             <!-- Logo -->
-                <h1><a href="../../index.html" id="logo">PA NULL</a></h1>
+                <h1><a href="../../index.html" id="logo">NULL Sports</a></h1>
 
             <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
-                        <li><a href="../../usuarios/cadastrar/index.html">Cadastrar</a></li>
-                        <li class="current_page_item"><a href="../lista/index.html">Torneios em Andamento</a></li>
-                        <li><a href="../../usuarios/login/index.html">Meu Perfil</a></li>
+                        <li class="current_page_item"><a href="../../index.html">Home</a></li>
+                        <li><a href="../cadastrar/index.html">Crie seu torneio</a></li>
+                        <li><a href="../../usuarios/cadastrar/index.html">Cadastrar/Logar</a></li>
+                        <li><a href="index.html">Torneios em Andamento</a></li>
+                        <li><a href="#">Meu Perfil</a></li>
                         <!-- <li><a href="./usuarios/lista/index.html">Meu Perfil</a></li> 
                         = Lista de Usuários Cadastrados  -->
                     </ul>
                 </nav>
         </div>
     </header>
-    <div class="list">
-        <div>
+
+    <div class="consulta">
+        <div class="content">
             <h3>Campeonatos Cadastrados</h3>
-            <table class="container_list">
+            <table>
                 <thead>
-                    <tr>
-                        <th><h1>Nome</h1></th>
-                        <th><h1>Modalidade</h1></th>
-                        <th><h1>Premiação</h1></th> 
-                        <th><h1>Data</h1></th>
-                        <th><h1>Qtd Times</h1></th>
+                    <tr class="infos">
+                        <th class="infos1">Nome</th>
+                        <th class="infos2">Modalidade</th>
+                        <th class="infos3">Premiacao</th> 
+                        <th class="infos4">Data</th>
+                        <th class="infos5">Qtd Times</th>
                         <th></th>
                     </tr>
                 </thead>
+
                 <tbody id="table_body">
-                    <tr></tr>
+                    <tr class="conteudo"></tr>
                 </tbody>
             </table>
             <br>
         </div>
     </div>
+</body>
