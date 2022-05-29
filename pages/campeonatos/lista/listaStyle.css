@@ -1,0 +1,67 @@
+.content{
+    width: 900px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.consulta{
+    position: center;
+    width: 90%;
+    padding: 25px;
+    margin: auto;
+    background: rgb(247, 247, 247);
+    border: 3px solid #066a75;
+    
+    box-shadow: 5px;
+    border-radius: 5px;
+  
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+/* Informações da Consulta */
+.infos{
+    color: rgb(66, 74, 77);
+}
+.infos1{
+    padding-right: 20px;
+}
+.infos2{
+    padding-right: 20px;
+}
+.infos3{
+    padding-right: 20px;
+}
+.infos4{
+    padding-right: 20px;
+}
+.infos5{
+    padding-right: 20px;
+}
+/* Fim Informações da Consulta */
+
+/* Botão Excluir Campeonato */
+.btnDeletar{
+    background-color: rgb(255, 126, 126);
+    margin: 8px;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Link Editar Campeonato */
+.editarCamp{
+    color: rgb(255, 255, 255);
+    border: 2px outset rgb(53, 70, 255);
+    border-radius: 6px;
+    background-color: rgb(104, 104, 255);
+    text-decoration: none;
+    padding: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+}

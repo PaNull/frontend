@@ -2,51 +2,79 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../globals.js"></script>
     <script src="./script.js"></script>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../Style/style.css">
+    <link rel="stylesheet" type="text/css" href="listaUsuarios.css">
 </head>
 
-<div>
-    <div id="especificUser">
-        <h3>Pesquisar por usuário específico</h3>
-        Insira o ID do usuário: <input type="number" min="0" id="idUser">
-        <button type="submit" onclick="teste()">Pesquisar</button>
+<!-- Header -->
+<header id="header">
+    <div class="inner">
 
-        <table id="table_especific" style="display: none;">
-            <thead>
-                <tr>
-                    <th>Nome:</th>
-                    <th>E-mail:</th>
-                    <th>Cargo:</th>
-                    <th>CPF</th> 
-                    <th>Aniversario</th>
-                    <th>Nacionalidade</th>
-                    <th></th>
-                </tr>
-             </thead>
-             <tbody></tbody>
-        </table>
+        <!-- Logo -->
+            <h1><a href="../../index.html" id="logo">NULL Sports</a></h1>
+
+        <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li class="current_page_item"><a href="../../index.html">Home</a></li>
+                    <li><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
+                    <li><a href="../usuarios/cadastrar/index.html">Cadastrar</a></li>
+                    <li><a href="../../campeonatos/lista/index.html">Torneios em Andamento</a></li>
+                    <li><a href="#">Meu Perfil</a></li>
+                    <!-- <li><a href="./usuarios/lista/index.html">Meu Perfil</a></li> 
+                    = Lista de Usuários Cadastrados  -->
+                </ul>
+            </nav>
     </div>
+</header>
 
-    
+<div class="consulta">
+    <div class="content">
+        <div id="especificUser">
+            <h3>Pesquisar por usuário específico</h3>
+            <p>Insira o ID do usuário:</p>
+                <input type="number" min="0" id="idUser">
+            <button class="btnPesquisar" type="submit" onclick="teste()">Pesquisar</button>
 
-    <div>
-        <h3>Usuarios Cadastrados</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id:</th>
-                    <th>Nome:</th>
-                    <th>Cargo:</th>
-                    <th>CPF</th> 
-                    <th>Aniversario</th>
-                    <th>Nacionalidade</th>
-                    <th></th>
-                </tr>
-            </thead>
-            
-            <tbody id="table_body">
-                <tr></tr>
-            </tbody>
-        </table>
-        <br>
+            <table id="table_especific" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Nome:</th>
+                        <th>E-mail:</th>
+                        <th>Cargo:</th>
+                        <th>CPF</th> 
+                        <th>Aniversario</th>
+                        <th>Nacionalidade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        
+
+        <div>
+            <h3>Usuarios Cadastrados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id:</th>
+                        <th>Nome:</th>
+                        <th>Cargo:</th>
+                        <th>CPF</th> 
+                        <th>Aniversario</th>
+                        <th>Nacionalidade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                <tbody id="table_body">
+                    <tr></tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
     </div>
 </div>
