@@ -33,12 +33,6 @@ app.set('views', path.join(__dirname, '/pages'));
 //Public
 app.use(express.static(path.join(__dirname, "public")))
 
-/*
-app.use('/pages', express.static(path.join(__dirname + 'pages')));
-app.set('views', path.join(__dirname, 'pages'));
-*/
-
-
 
 //Definindo meu post
 app.post('/', (req, res) => {
