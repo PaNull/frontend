@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/css/perfil.css">
     <link rel="stylesheet" href="/css/style.css">
 
+     <!-- LINKS TEMPORÁRIOS PARA O FRONT USAR -->
+     <link rel="stylesheet" href="../../../public/css/perfil.css">
+     <link rel="stylesheet" href="../../../public/css/style.css">
+    <link rel="stylesheet" href="../../../public/css/main.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -49,10 +54,29 @@
                                     </div>
                                     <div class="card-body bg-warning">
                                         <div class="body-description">
-                                            <h2>Você está logado!</h2> <br>
-                                            <h2>Nome: <br></h2>
-                                            <h2>E-mail: <br></h2>
-                                            <h2>Campeonatos Cadastrados: <br></h2>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nome:</th><br>
+                                                        <th>E-mail:</th>
+                                                        <th>Cargo:</th>
+                                                        <th>CPF</th> 
+                                                        <th>Aniversario</th>
+                                                        <th>Nacionalidade</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                     <tr>
+                                                        <td><%= nome %></td>
+                                                        <td><%= email %></td>
+                                                        <td><%= cargo %></td>
+                                                        <td><%= cpf %></td>
+                                                        <td><%= dataNasc %></td>
+                                                        <td><%= nacionalidade %></td>
+                                                     </tr>
+                                                </tbody>
+                                            </table>
+                                            <button type="submit">Logout</button>
                                         </div>
                                     </div>
                                     <div class="card-footer">
@@ -90,29 +114,7 @@
         </div>
     </div>
          <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome:</th><br>
-                        <th>E-mail:</th>
-                        <th>Cargo:</th>
-                        <th>CPF</th> 
-                        <th>Aniversario</th>
-                        <th>Nacionalidade</th>
-                    </tr>
-                 </thead>
-                 <tbody>
-                     <tr>
-                        <td><%= nome %></td>
-                        <td><%= email %></td>
-                        <td><%= cargo %></td>
-                        <td><%= cpf %></td>
-                        <td><%= dataNasc %></td>
-                        <td><%= nacionalidade %></td>
-                     </tr>
-                </tbody>
-            </table>
-            <button type="submit">Logout</button>
+            
         </div>
 </body>
 </html>
