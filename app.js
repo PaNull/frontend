@@ -34,6 +34,8 @@ app.set('views', path.join(__dirname, '/pages'));
 app.use(express.static(path.join(__dirname, "public")))
 
 
+let sessaoUsuario = null;
+
 //Definindo meu post
 app.post('/', (req, res) => {
 
@@ -60,6 +62,8 @@ app.post('/', (req, res) => {
             //criando a sessão
             req.session.login = body.data.nome;
     
+            sessaoUsuario = body.data.nome
+
             res.render(pagePerfil, {
                 login: body.data.nome,
                 nome: body.data.nome,
@@ -73,6 +77,7 @@ app.post('/', (req, res) => {
             //vai para a pag meu perfil passando login, nome, email, dataNasc {...} como parâmetro
 
             console.log('O meu usuário logado é: ', body.data.nome);
+            
         } else {
             res.render(pageLogin);
         }
@@ -81,14 +86,13 @@ app.post('/', (req, res) => {
 })
 
 
-//Definindo minha rota - Página inicial
+//Definindo minha rota - Página inicial (Acessou a pág login -> Verificando se já está logado -> Redireciona caso Sim)
 app.get('/', (req, res) => {
     //Verificando se está logado -> só acessa essa pág se estiver logado
     if (req.session.login) {
 
-        window.location(pagePerfil)
          res.render(pagePerfil, {
-            login: body.data.nome
+            login: req.session.login
         }) //vai para a pag meu perfil 
 
         //passando login como parâmetro
@@ -98,14 +102,15 @@ app.get('/', (req, res) => {
 })
 
 
+
 //Definindo minha rota - Logout
-app.delete('/logout', (req, res) => {
+app.get('/logout', (req, res) => {
     if (req.session) {
       req.session.destroy(err => {
         if (err) {
           res.status(400).send('Unable to log out')
         } else {
-          res.send('Logout successful')
+          res.render(pageLogin)
         }
       });
     } else {
