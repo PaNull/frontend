@@ -31,7 +31,7 @@ const createRows = () => {
                 <td> ${ data.cpf } </td>
                 <td> ${ data.dataNascimento } </td>
                 <td> ${ data.nacionalidade } </td>
-                <td> <button onclick="deleteUser(${ data.id_usuario })">Excluir Usuario</button></td>
+                <td> <button onclick="deleteUser(${ data.id_usuario })" id="btnExcluir">Excluir Usuario</button></td>
                 <td><a href="${data.link}">Editar Usuario</a></td>
             </tr>
         `

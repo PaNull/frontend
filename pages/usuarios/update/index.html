@@ -4,44 +4,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../globals.js"></script>
     <script src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../Style/style.css">    
 </head>
-<div>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+                <h1><a href="../../index.html" id="logo">NULL Sports</a></h1>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current_page_item"><a href="../../index.html">Home</a></li>
+                        <li><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
+                        <li><a href="../usuarios/cadastrar/index.html">Cadastrar</a></li>
+                        <li><a href="../../campeonatos/lista/index.html">Torneios em Andamento</a></li>
+                        <li><a href="#">Meu Perfil</a></li>
+                        <!-- <li><a href="./usuarios/lista/index.html">Meu Perfil</a></li> 
+                        = Lista de Usuários Cadastrados  -->
+                    </ul>
+                </nav>
+        </div>
+    </header>
     <div>
-        <!-- Só pode ser acessado por adms -->
-        <h3>Atualizar Conta</h3>
-        <form name="updateUser">
+        <div>
+            <!-- Só pode ser acessado por adms -->
+            <form name="updateUser" class="cadastro">
+                <h3>Atualizar Conta</h3>
+                <div>
+                    <label for="nome"><br>Nome:<br></label>
+                    <input type="text" name="nome">
+                </div>
             
-            <div>
-                <input type="text" name="nome">
-                <label for="nome">Nome:</label>
-            </div>
-          
 
-            <div>
-                <input type="text" name="dataNascimento">
-                <label for="dataNascimento">Aniversario</label>
-            </div>
+                <div>
+                    <label for="dataNascimento"><br>Aniversario<br></label>
+                    <input type="text" name="dataNascimento">
+                </div>
 
-            <div>
-                <input type="text" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
-                <label for="cpf">CPF</label>
-            </div>
+                <div>
+                    <label for="cpf"><br>CPF<br></label>
+                    <input type="text" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+                </div>
+                
+                <div>
+                    <label for="nacionalidade"><br>Nacionalidade<br></label>
+                    <input type="text" name="nacionalidade">
+                </div>
             
-            <div>
-                <input type="text" name="nacionalidade">
-                <label for="nacionalidade">Nacionalidade</label>
-            </div>
-           
-            <div>
-                <select name="cargo">
-                    <option value="Administrador">Administrador</option>
-                    <option value="Jogador">Jogador</option>
-                    <option value="Visitante">Visitante</option>
-                </select>
-                <label for="cargo">cargo</label>
-            </div>
-           
-            <button onclick="updateUser()">Atualizar</button>
-        </form>
+                <div>
+                    <label for="cargo"><br>cargo<br></label>
+                    <select name="cargo">
+                        <option value="Administrador">Administrador</option>
+                        <option value="Jogador">Jogador</option>
+                        <option value="Visitante">Visitante</option>
+                    </select>
+                </div>
+            
+                <button onclick="updateUser()">Atualizar</button>
+            </form>
+        </div>
     </div>
-</div>
+</body>
