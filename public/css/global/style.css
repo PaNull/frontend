@@ -1,0 +1,55 @@
+.content{
+    width: 800px;
+    margin: 0px auto;
+    position: center;
+}
+
+.login{
+    position: center;
+    width: 36%;
+    padding: 40px;
+    margin: auto;
+    background: rgb(247, 247, 247);
+    border: 3px solid #066a75;
+    
+    box-shadow: 5px;
+    border-radius: 5px;
+  
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+.title{
+    font-size: 17px;
+}
+
+p{
+    color: #303238;
+    font-size: 15px;
+}
+.pUser{
+    padding: 0px;
+    margin-bottom: 0px;
+}
+.inputUsuario{
+    width: 50%;
+}
+
+.pPassword{
+    padding-top: 20px;
+    margin-bottom: 0px;
+}
+.inputPassword{
+    width: 50%;
+}
+
+.inputLogar{
+    width: 40%;
+    margin-left: 45px;
+    margin-top: 45px;
+}

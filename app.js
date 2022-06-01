@@ -13,25 +13,11 @@ const pagePerfil = 'usuarios/perfil/index'
 //var login = "admin"
 //var password = "123"
 
-
 //fazendo com o que o express utilize as sessions
 app.use(session({
     secret: 'dsaghf721365dgyb87d12giuby'
     //definindo o segredo da sessão (token)
 })); 
-
-
-//definindo o segredo da sessão (token) 
-let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
-
-console.log(token);
-
-
-/* //fazendo com o que o express utilize as sessions
-app.use(session({
-    secret: token
-    //definindo o segredo da sessão (token)
-})); */
 
 
 //fazendo com que meu app tbm use o body-parser
@@ -43,6 +29,9 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use('/public', express.static(path.join(__dirname + '../public')));
 app.set('views', path.join(__dirname, '/pages'));
+
+//Public
+app.use(express.static(path.join(__dirname, "public")))
 
 
 //Definindo meu post
@@ -79,7 +68,7 @@ app.post('/', (req, res) => {
                 cpf: body.data.cpf,
                 nacionalidade: body.data.nacionalidade,
                 cargo: body.data.cargo                
-            });
+            }); 
 
             //vai para a pag meu perfil passando login, nome, email, dataNasc {...} como parâmetro
 
@@ -89,7 +78,6 @@ app.post('/', (req, res) => {
         }
 
     });  
-
 })
 
 
@@ -97,9 +85,12 @@ app.post('/', (req, res) => {
 app.get('/', (req, res) => {
     //Verificando se está logado -> só acessa essa pág se estiver logado
     if (req.session.login) {
-        res.render(pagePerfil, {
+
+        window.location(pagePerfil)
+         res.render(pagePerfil, {
             login: body.data.nome
-        }) //vai para a pag meu perfil
+        }) //vai para a pag meu perfil 
+
         //passando login como parâmetro
     } else {
         res.render(pageLogin) //não está logado -> não pode acessar a pág. Fica na pág de login
