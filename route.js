@@ -46,7 +46,13 @@ router.get("/pages/usuarios/update", function(req, res){
 
 /*Rota de Login -> Post -> Recebendo os dados do formulário*/
 router.post('/pages/usuarios/login', (req, res) => {
-res.send("teste1post")
+
+
+    req.body.login //recebendo o conteúdo/input do formuario
+
+    res.send('Texto: '+ req.body.login + " <br> Conteudo: " + req.body.senha) //exibindo o conteudo
+
+
   /*   var options = {
         uri : 'https://fho-project-application.herokuapp.com/api/user/login',
         method : 'POST',
@@ -98,7 +104,8 @@ router.get('/pages/usuarios/login', (req, res) => {
 
     res.render(pageLogin)
 
-    console.log(req.session.login)
+    //console.log(req.session.login)
+
 
  /* 
     //Verificando se está logado -> só acessa essa pág se estiver logado

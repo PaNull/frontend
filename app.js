@@ -9,8 +9,9 @@ const app = express(); //chamando o express dentro da variável app
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.use('/public', express.static(path.join(__dirname + '../public')));
+//app.use('/public', express.static(path.join(__dirname + '../public')));
 app.set('views', path.join(__dirname, '/pages'));
+app.use(express.static('public'))
 
 //Chamando nossas rotas definidas no arquivo 'route.js'
 let userRoute = require('./route'); 
