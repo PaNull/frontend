@@ -13,10 +13,10 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, '/pages'));
 app.use(express.static('public'))
 
+
 //Chamando nossas rotas definidas no arquivo 'route.js'
 let userRoute = require('./route'); 
 app.use('/', userRoute);
-
 
 //Criando o server
 app.listen(port, () => {

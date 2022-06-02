@@ -106,7 +106,6 @@ router.get('/pages/usuarios/login', (req, res) => {
 
     //console.log(req.session.login)
 
-
  /* 
     //Verificando se está logado -> só acessa essa pág se estiver logado
     if (req.session.login) {

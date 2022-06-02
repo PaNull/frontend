@@ -1,57 +1,25 @@
-const express = require('express'); //utilizaremos o módulo express 
-const session = require('express-session'); //utilizaremos o express-session para manipular as sessões
 var request = require('request');
-const bodyParser = require('body-parser')
 
-var path = require('path'); //utilizaremos o path para manipular e setar os diretórios das views
-const app = express(); //chamando o express dentro da variável app
+var options = {
+    uri : 'https://fho-project-application.herokuapp.com/api/user/login',
+    method : 'POST',
+    json:true,
+}
 
-const pageLogin = 'usuarios/login/index'
-const pagePerfil = 'usuarios/perfil/index'
+console.log("Carregou o arquivo!")
 
-//var login = "admin"
-//var password = "123"
+function login(){
 
-//fazendo com o que o express utilize as sessions
-app.use(session({
-    secret: 'dsaghf721365dgyb87d12giuby'
-    //definindo o segredo da sessão (token)
-})); 
+    const user = document.forms.formularioLogin.login.value;
+    const password = document.forms.formularioLogin.password.value;
 
-
-//fazendo com que meu app tbm use o body-parser
-app.use(bodyParser.urlencoded({
-    extended: true
-})); //usado para recuperar os dados do formulário
-
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.use('/public', express.static(path.join(__dirname + '../public')));
-app.set('views', path.join(__dirname, 'pages'));
-
-//Public
-app.use(express.static(path.join(__dirname, "public")))
-
-
-let sessaoUsuario = null;
-
-//Definindo meu post
-app.post('/', (req, res) => {
-
-    var options = {
-        uri : 'https://fho-project-application.herokuapp.com/api/user/login',
-        method : 'POST',
-        json:true,
-        body : {
-            "id": req.body.login, 
-            "password": req.body.password
-        }
+    options.body = {
+        "id": user,
+        "password": password
     }
-    
-    console.log("Chegou 1");
 
     request(options, function (error, response, body) {
-    
+
         console.log("Chegou 2", body);
         
         if (body?.data) {
@@ -82,38 +50,4 @@ app.post('/', (req, res) => {
         }
 
     });  
-})
-
-
-// (Acessou a pág login -> Verificando se já está logado -> Redireciona caso Sim)
-app.get('/', (req, res) => {
-    //Verificando se está logado -> só acessa essa pág se estiver logado
-    if (req.session.login) {
-
-         res.render(pagePerfil, {
-            login: req.session.login
-        }) //vai para a pag meu perfil 
-
-        //passando login como parâmetro
-    } else {
-        res.render(pageLogin) //não está logado -> não pode acessar a pág. Fica na pág de login
-    }
-})
-
-
-
-//Definindo minha rota - Logout
-app.get('/logout', (req, res) => {
-    if (req.session) {
-      req.session.destroy(err => {
-        if (err) {
-          res.status(400).send('Unable to log out')
-        } else {
-          res.render(pageLogin)
-        }
-      });
-    } else {
-      res.end()
-    }
-})
-
+}
