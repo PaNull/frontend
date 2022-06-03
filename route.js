@@ -1,15 +1,22 @@
 const express = require('express');
+const app = express(); //chamando o express dentro da variável app
+
 const router = express.Router();
 
 const session = require('express-session'); //utilizaremos o express-session para manipular as sessões
 var request = require('request');
 const bodyParser = require('body-parser');
 
+/* Body Parser */
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+
 var path = require('path'); //utilizaremos o path para manipular e setar os diretórios das views
 router.use('/public', express.static(path.join(__dirname + '../public')));
 
 const pageLogin = 'usuarios/login/index'
 const pagePerfil = 'usuarios/perfil/index'
+
 
 router.get("/", function(req, res){
     res.render('index.html')
@@ -44,16 +51,20 @@ router.get("/pages/usuarios/update", function(req, res){
 })
 
 
-/*Rota de Login -> Post -> Recebendo os dados do formulário*/
+//Rota de Login -> Post -> Recebendo os dados do formulário
 router.post('/pages/usuarios/login', (req, res) => {
 
 
+    //req.body.login //recebendo o conteúdo/input do formuario
+
+    res.send("Funcionou") //exibindo o conteudo
+
+    
     req.body.login //recebendo o conteúdo/input do formuario
+    res.send('Texto: '+ req.body.login) //exibindo o conteudo
 
-    res.send('Texto: '+ req.body.login + " <br> Conteudo: " + req.body.senha) //exibindo o conteudo
-
-
-  /*   var options = {
+/* 
+    var options = {
         uri : 'https://fho-project-application.herokuapp.com/api/user/login',
         method : 'POST',
         json:true,
@@ -95,7 +106,7 @@ router.post('/pages/usuarios/login', (req, res) => {
             res.render(pageLogin);
         }
 
-    });   */
+    });    */
 })
 
 
@@ -106,9 +117,9 @@ router.get('/pages/usuarios/login', (req, res) => {
 
     //console.log(req.session.login)
 
- /* 
+ 
     //Verificando se está logado -> só acessa essa pág se estiver logado
-    if (req.session.login) {
+/*     if (req.session.login) {
 
          res.render(pagePerfil, {
             login: req.session.login
@@ -118,7 +129,7 @@ router.get('/pages/usuarios/login', (req, res) => {
     } else {
         res.render(pageLogin) //não está logado -> não pode acessar a pág. Fica na pág de login
     }
-*/
+ */
 
 })
 
