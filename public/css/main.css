@@ -1607,7 +1607,7 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		background: url("/images/home/headerEsportes.png");
+		background: url("images/bg01.png"), url("/images/home/headerEsportes.png");
 		background-position: top left, center center;
 		background-size: auto, cover;
 		padding: 1em 0;
