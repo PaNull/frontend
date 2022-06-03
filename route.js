@@ -52,10 +52,12 @@ router.get("/pages/usuarios/update", function(req, res){
 
 
 //Rota de Login -> Post -> Recebendo os dados do formulário
+/*
 router.post('/pages/usuarios/login', (req, res) => {
 
 
     //req.body.login //recebendo o conteúdo/input do formuario
+    
 
     res.send("Funcionou") //exibindo o conteudo
 
@@ -63,16 +65,11 @@ router.post('/pages/usuarios/login', (req, res) => {
     req.body.login //recebendo o conteúdo/input do formuario
     res.send('Texto: '+ req.body.login) //exibindo o conteudo
 
+})
+*/
+
 /* 
-    var options = {
-        uri : 'https://fho-project-application.herokuapp.com/api/user/login',
-        method : 'POST',
-        json:true,
-        body : {
-            "id": req.body.login, 
-            "password": req.body.password
-        }
-    }
+    
     
     console.log("Chegou 1");
 
@@ -106,8 +103,9 @@ router.post('/pages/usuarios/login', (req, res) => {
             res.render(pageLogin);
         }
 
-    });    */
-})
+    });  
+    })  */
+
 
 
 //Rota de Login -> Get -> (Acessou a pág login -> Verificando se já está logado -> Redireciona caso Sim)

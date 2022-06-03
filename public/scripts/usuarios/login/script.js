@@ -1,24 +1,38 @@
-/* var request = require('request');
-
-var options = {
-    uri : 'https://fho-project-application.herokuapp.com/api/user/login',
-    method : 'POST',
-    json:true,
-}
- */
-console.log("Carregou o arquivo!")
-
-function login(){
+function logando(){
+    console.log("asdddddddddd")
 
     const user = document.forms.formularioLogin.login.value;
     const password = document.forms.formularioLogin.password.value;
 
-    options.body = {
-        "id": user,
-        "password": password
+    var list = [];
+    
+    //var input = document.getElementById("idUser").value;
+    
+   
+    const getEspecificUser = (id) => {
+        const request = {
+            type:'GET',
+            //url: `${URL_API}user/${id}`,
+            url: `${URL_API}user/login`,
+            success: function(response) {
+                list = response.data;
+            },
+            error: () => {
+                console.log("ERRO");
+            }
+        };
+    
+        $.ajax(request);
     }
 
-    request(options, function (error, response, body) {
+    getEspecificUser(user);
+
+    console.log(list);
+}  
+
+
+
+   /*  request(options, function (error, response, body) {
 
         console.log("Chegou 2", body);
         
@@ -49,5 +63,4 @@ function login(){
             res.render(pageLogin);
         }
 
-    });  
-}
+    });  */

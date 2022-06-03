@@ -77,7 +77,7 @@ const getEspecificUser = (id) => {
         },
         error: () => {
             document.getElementById("table_especific").style.display = 'none';
-            alert('Se ferrou babaca')
+            alert('Erro')
         }
     };
 
