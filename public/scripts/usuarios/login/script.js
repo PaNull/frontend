@@ -7,13 +7,13 @@ function logando(){
     var list = [];
     
     //var input = document.getElementById("idUser").value;
-    
    
-    const getEspecificUser = (id) => {
+    const getEspecificUser = () => {
         const request = {
             type:'GET',
             //url: `${URL_API}user/${id}`,
             url: `${URL_API}user/login`,
+            data: {email: user, senha: password},
             success: function(response) {
                 list = response.data;
             },
@@ -25,7 +25,7 @@ function logando(){
         $.ajax(request);
     }
 
-    getEspecificUser(user);
+    getEspecificUser();
 
     console.log(list);
 }  

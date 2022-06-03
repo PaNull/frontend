@@ -1,8 +1,6 @@
 <head>
     <title>Cadastre-se</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/scripts/globals.js"></script>
-    <script src="/scripts/usuarios/cadastrar/script.js"></script>
+
     <link rel="stylesheet" href="/css/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
 
@@ -42,7 +40,12 @@
                         <input type="text" name="nome" placeholder="Digite seu Nome">
                     </div>
                 </p>
-
+                <p>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="Digite seu E-mail">
+                    </div>
+                </p>
                 <p>
                     <div>
                         <label for="dataNascimento">Aniversario</label>
@@ -64,6 +67,13 @@
                     </div>
                 </p>
 
+                <p>   
+                    <div>
+                        <label for="cargo">Cargo</label>
+                        <input type="text" name="cargo" placeholder="Digite seu cargo">
+                    </div>
+                </p>
+
                 <p>
                     <div>
                         <label for="senha">Senha</label>
@@ -74,13 +84,13 @@
                 <p>
                     <a href="../login/index.html">Logar</a>
                 </p>
-
-                <p>
-                <button onclick="createUser()">Cadastrar</button>
-                </p>
-
+                <input type="button" onclick="cadastrar()">
+                <!-- <button onclick="teste()">Cadastrar</button> -->
             </form>
-        
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/globals.js"></script>
+    <script src="/scripts/usuarios/cadastrar/script.js"></script>
 </body>

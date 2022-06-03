@@ -1,5 +1,7 @@
-const createUser = () => {
+function cadastrar(){
+
     const formValues = document.forms.cadastrarUsuario
+
     const payload = {
         nome: formValues.nome.value,
         email: formValues.email.value,
@@ -9,8 +11,9 @@ const createUser = () => {
         cargo: formValues.cargo.value,
         senha: formValues.senha.value
     }
-    
-    const request = {
+    console.log("chegou no create")
+
+    /* const request = {
         type:'POST',
         url:`${URL_API}user`,
         dataType: 'json',
@@ -18,8 +21,14 @@ const createUser = () => {
         success: function(response) {
             alert(response.message)
         },
-        data: JSON.stringify(payload),
+        data: payload,
     };
     
-    $.ajax(request);
+    $.ajax(request); */
+
+    $.post(`${URL_API}user`,{...payload} ,function({ data }){
+        alert("Data: " + data );
+    });
 }
+
+console.log("carregou")
