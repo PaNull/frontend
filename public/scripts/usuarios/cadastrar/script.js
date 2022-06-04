@@ -1,6 +1,4 @@
-let list = [];
-
-function cadastrar(){
+function cadastrar() {
 
     let nome = document.getElementsByName("nome")[0].value
     let email = document.getElementsByName("email")[0].value
@@ -9,14 +7,20 @@ function cadastrar(){
     let nacionalidade = document.getElementsByName("nacionalidade")[0].value
     let cargo = document.getElementsByName("cargo")[0].value
     let senha = document.getElementsByName("senha")[0].value
-   
-   /*      var elemento = document.getElementsByName('a');
-  
-        for(i=0;i<elemento.length;i++){
-           var e = elemento[i];
-           console.log(e.value);
-        } */
- 
+
+    let elementos = [nome, email, aniversario, cpf, nacionalidade, cargo, senha];
+    
+    
+    var campos = document.getElementsByTagName("input");
+    
+    for(var i = 0; i < elementos.length; i++){
+        if(campos[i].value == ""){
+            alert("Preencha o campo " + campos[i].name + "!" );
+            campos[i].focus();
+            return;
+        }
+    }
+
     const payload = {
         nome: nome,
         email: email,
@@ -28,30 +32,31 @@ function cadastrar(){
     }
 
     console.log("chegou no create")
-    console.log(payload)
 
+    //FETCH POST
     const options = {
         method: 'POST',
         headers: {
-        'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
     };
-        
+
     fetch(`${URL_API}user`, options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);
-                }
+            }
             return data.json();
-            }).then(payload => {
-                console.log(payload);
-            }).catch(e => {
-                console.log(e);
+
+        }).then(payload => {
+            console.log(payload);
+        }).catch(e => {
+            console.log(e);
         });
 
 
-    /* FUNCIONA USANDO FETCH
+    /* FETCH GET
     async function getContent(){
         try {
             const response = await fetch(`${URL_API}users`)
@@ -65,4 +70,4 @@ function cadastrar(){
     getContent() */
 }
 
-console.log("carregou")
+console.log("script loaded")
