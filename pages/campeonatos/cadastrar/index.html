@@ -17,18 +17,16 @@
         <div class="inner">
 
             <!-- Logo -->
-                <h1><a href="../../index.html" id="logo">PA NULL</a></h1>
+                <h1><a href="/" id="logo">PA NULL</a></h1>
 
             <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li><a href="../../index.html">Home</a></li>
-                        <li class="current_page_item"><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
-                        <li><a href="../../usuarios/cadastrar/index.html">Cadastrar</a></li>
-                        <li><a href="../lista/index.html">Torneios em Andamento</a></li>
-                        <li><a href="../../usuarios/login/index.html">Meu Perfil</a></li>
-                        <!-- <li><a href="./usuarios/lista/index.html">Meu Perfil</a></li> 
-                        = Lista de Usuários Cadastrados  -->
+                        <li><a href="/">Home</a></li>
+                        <li class="current_page_item"><a href="#">Crie seu torneio</a></li>
+                        <li><a href="/pages/usuarios/cadastrar">Cadastrar</a></li>
+                        <li><a href="/pages/campeonatos/lista">Torneios em Andamento</a></li>
+                        <li><a href="/pages/usuarios/login">Meu Perfil</a></li>
                     </ul>
                 </nav>
         </div>
@@ -51,11 +49,11 @@
                 <div>
                     <label for="modalidade">Modalidade</label>
                     <select name="modalidade">
-                        <option value="" disabled selected>Selecione a modalidade:</option>
-                        <option value="1">Basquete</option>
-                        <option value="2">Futebol</option>
-                        <option value="3">Futsal</option>
-                        <option value="4">Vôlei</option>
+                        <option value="disabled" disabled selected>Selecione a modalidade:</option>
+                        <option value="Basquete">Basquete</option>
+                        <option value="Futebol">Futebol</option>
+                        <option value="Futsal">Futsal</option>
+                        <option value="Vôlei">Vôlei</option>
                     </select>
                 </div>
                 </p>
@@ -69,11 +67,17 @@
 
                 <p>
                 <div>
-                    <label for="dataCampeonato">Data do campeonato</label>
-                    <input type="date" name="dataCampeonato">
-                
+                    <label for="dataCampeonato">Data de início do campeonato</label>
+                    <input type="date" name="dataStartCamp">
                 </div>
                 </p>
+
+                <p>
+                    <div>
+                        <label for="dataCampeonato">Data de término do campeonato</label>
+                        <input type="date" name="dataEndCamp">
+                    </div>
+                    </p>
 
                 <p>
                 <div>
@@ -82,12 +86,9 @@
                 </div>     
                 </p>
 
-                <p>
-                <button onclick="createTournament()">Cadastrar</button>
-                </p>
+                <input type="button" onclick="cadastrarCamp()">Cadastrar
 
             </form>
-        
         </div>
     </div>
 </body>
