@@ -21,6 +21,7 @@ const createRowsEspecific = () => {
     })
 }
 
+
 const createRows = () => {
     list.forEach(data => {
         row = `
@@ -32,10 +33,11 @@ const createRows = () => {
                 <td> ${ data.dataNascimento } </td>
                 <td> ${ data.nacionalidade } </td>
                 <td> <button onclick="deleteUser(${ data.id_usuario })" id="btnExcluir">Excluir Usuario</button></td>
-                <td><a href="${data.link}">Editar Usuario</a></td>
+                <td><a href="/pages/usuarios/update?id=${data.id_usuario}">Editar Usuario</a></td>
             </tr>
         `
         $("#table_body tr:last").after(row) ;
+        console.log(data.id_usuario)
     })
 }
 
