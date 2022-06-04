@@ -17,7 +17,7 @@ const createRows = () => {
     })
 }
 
-<tr>
+            <tr>
                 <td> ${ data.nome } </td>
                 <td> ${ data.modalidade } </td>
                 <td> ${ data.premiacao } </td>
