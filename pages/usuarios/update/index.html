@@ -39,10 +39,14 @@
                     <input type="text" name="nome">
                 </div>
             
+                <div>
+                    <label for="email"><br>E-mail<br></label>
+                    <input type="email" name="email">
+                </div>
 
                 <div>
                     <label for="dataNascimento"><br>Aniversario<br></label>
-                    <input type="text" name="dataNascimento">
+                    <input type="date" name="dataNascimento">
                 </div>
 
                 <div>
@@ -58,13 +62,13 @@
                 <div>
                     <label for="cargo"><br>cargo<br></label>
                     <select name="cargo">
+                        <option value="disabled" disabled selected>Selecione o cargo:</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Jogador">Jogador</option>
                         <option value="Visitante">Visitante</option>
                     </select>
                 </div>
-            
-                <button onclick="updateUser()">Atualizar</button>
+                <input type="button" onclick="atualizarUser()" value="Atualizar">
             </form>
         </div>
     </div>

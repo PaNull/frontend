@@ -1,38 +1,75 @@
-var values = { };
-const id = location.search.slice(1);
+function atualizarUser() {
 
-const getUser = () => {
-    const request = {
-        type:'GET',
-        url:`${URL_API}user/${id}`,
-        success: function(response) {
-            values = response.data;
+    let nome = document.getElementsByName("nome")[0].value
+    let email = document.getElementsByName("email")[0].value
+    let aniversario = document.getElementsByName("dataNascimento")[0].value
+    let cpf = document.getElementsByName("cpf")[0].value
+    let nacionalidade = document.getElementsByName("nacionalidade")[0].value
+    let cargo = document.getElementsByName("cargo")[0].value
+
+    let elementos = [nome, email, aniversario, cpf, nacionalidade, cargo];
+    
+    var url = window.location.href;
+    url = url.split('?id=');
+    url = url[1];
+    console.log(url);
+
+    const id = url;
+    
+    var campos = document.getElementsByTagName("input");
+    
+    for(var i = 0; i < elementos.length; i++){
+        if(i==5){
+            if(cargo == "disabled"){
+                alert("Escolha um cargo!");
+                campos[i].focus();
+                return
+            }
         }
-    };
-    $.ajax(request);
-}
-
-const updateUser = () => {
-    const formValues = document.forms.updateUser
-    const payload = {
-        id,
-        nome: formValues.nome.value,
-        dataNascimento: formValues.dataNascimento.value,
-        cpf: formValues.cpf.value,
-        nacionalidade: formValues.nacionalidade.value
+        if(campos[i].value == ""){
+            alert("Preencha o campo " + campos[i].name + "!" );
+            campos[i].focus();
+            return;
+        }
     }
-    const request = {
-        type:'PUT',
-        url:`${URL_API}user`,
-        dataType: "json",
-        data: payload,
-        success: function(response) {
-            alert(response.message)
-        }
+    const payload = {
+        id: id,
+        nome: nome,
+        email: email,
+        dataNascimento: aniversario,
+        cpf: cpf,
+        nacionalidade: nacionalidade,
+        cargo: cargo
+    }
+
+    console.log("chegou no create")
+
+    //FETCH PUT
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
     };
-    $.ajax(request);
+
+    fetch(`${URL_API}user`, options)
+        .then(data => {
+            if (!data.ok) {
+                throw Error(data.status);
+            }
+            return data.json();
+
+        }).then(payload => {
+            console.log(payload);
+        }).catch(e => {
+            console.log(e);
+            alert("ERRO ao Atualizar usuário!")
+        })
+        .then(a => {
+            alert("Usuario Atualizado com sucesso!")
+            window.location.href = '/pages/usuarios/lista'
+        });
 }
 
-getUser()
-
-// FRONT PEGAR OS CAMPOS DE VALUES PARA PREENCHER O FORMULARIO HTML
+console.log("script loaded")
