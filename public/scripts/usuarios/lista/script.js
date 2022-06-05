@@ -32,14 +32,15 @@ const createRows = () => {
                 <td> ${ data.cpf } </td>
                 <td> ${ data.dataNascimento } </td>
                 <td> ${ data.nacionalidade } </td>
-                <td> <button onclick="deleteUser(${ data.id_usuario })" id="btnExcluir">Excluir Usuario</button></td>
-                <td><a href="/pages/usuarios/update?id=${data.id_usuario}">Editar Usuario</a></td>
+                <td> <input type="button" onclick="location.href='/pages/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>               
             </tr>
         `
         $("#table_body tr:last").after(row) ;
         console.log(data.id_usuario)
     })
 }
+/* <td><a href="/pages/usuarios/update?id=${data.id_usuario}">Editar Usuario</a></td> */
 
 const getUsers = () => {
     const request = {
@@ -101,4 +102,49 @@ function clearScreen(){
         document.querySelector("#table_especific tbody").deleteRow(0);
         list2 = []
     }
+}
+
+function confirmar(id){
+
+    var id = id;
+    var x;
+    var r=confirm("Tem certeza que deseja excluir este usuário?");
+
+    if (r==true){
+        excluirUser(id)
+        //x="você pressionou OK!";
+    }
+    else{
+        x="Você pressionou Cancelar!";
+    }
+    document.getElementById("demo").innerHTML=x;
+
+}
+
+
+function excluirUser(id){
+
+     //FETCH PUT
+     const options = {
+        method: 'DELETE'
+    };
+
+    fetch(`${URL_API}user/${id}`, options)
+        .then(data => {
+            if (!data.ok) {
+                throw Error(data.status);
+            }
+            return data.json();
+
+        }).then(id => {
+            console.log(id);
+        }).catch(e => {
+            console.log(e);
+            alert("ERRO ao Deletar Usuário!")
+            return
+        });
+      
+        alert("Usuario Deletado com Sucesso!")
+        window.location.href = '/pages/usuarios/lista'
+       
 }
