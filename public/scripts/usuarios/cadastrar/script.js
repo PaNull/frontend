@@ -10,7 +10,6 @@ function cadastrar() {
 
     let elementos = [nome, email, aniversario, cpf, nacionalidade, cargo, senha];
     
-    
     var campos = document.getElementsByTagName("input");
     
     for(var i = 0; i < elementos.length; i++){

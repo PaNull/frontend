@@ -34,6 +34,10 @@ router.get("/pages/campeonatos/update", function(req, res){
     res.render('./campeonatos/update/index')
 })
 
+router.get("/pages/campeonatos/listaadm", function(req, res){
+    res.render('./campeonatos/listaAdm/index')
+})
+
 router.get("/pages/usuarios/cadastrar", function(req, res){
     res.render('./usuarios/cadastrar/index')
 })
@@ -49,6 +53,8 @@ router.get("/pages/usuarios/perfil", function(req, res){
 router.get("/pages/usuarios/update", function(req, res){
     res.render('./usuarios/update/index')
 })
+
+
 
 
 //Rota de Login -> Post -> Recebendo os dados do formulário
