@@ -117,8 +117,6 @@ function confirmar(id){
     else{
         x="Você pressionou Cancelar!";
     }
-    document.getElementById("demo").innerHTML=x;
-
 }
 
 

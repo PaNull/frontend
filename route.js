@@ -67,6 +67,10 @@ router.get("/times/update", function(req, res){
     res.render('./times/update/index')
 })
 
+router.get("/sobreProjeto", function(req, res){
+    res.render('./sobreProjeto/index')
+})
+
 //Rota de Login -> Post -> Recebendo os dados do formulário
 
 router.post('/set-session', (req, res) => {

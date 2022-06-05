@@ -1,16 +1,12 @@
-function cadastrarCamp() {
+function cadastrarTeam() {
 
     let nome = document.getElementsByName("nome")[0].value
     let modalidade = document.getElementsByName("modalidade")[0].value
-    let premiacao = document.getElementsByName("premiacao")[0].value
-    let dataStartCamp = document.getElementsByName("dataStartCamp")[0].value
-    let dataEndCamp = document.getElementsByName("dataEndCamp")[0].value
-    let qtdTimes = document.getElementsByName("qtdTimes")[0].value
+    let capitao = document.getElementsByName("capitao")[0].value
     
-    let elementos = [nome, modalidade, premiacao, dataStartCamp, dataEndCamp, qtdTimes];
+    let elementos = [nome, modalidade, capitao];
     
     var campos = document.getElementsByTagName("input");
-   
    
     for(var i = 0; i < elementos.length-1; i++){
         if(i==2){
@@ -30,10 +26,7 @@ function cadastrarCamp() {
     const payload = {
         nome: nome,
         modalidade: modalidade,
-        dataStartCampeonato: dataStartCamp,
-        dataEndCampeonato: dataEndCamp,
-        premiacao: premiacao,
-        qntdTimes: qtdTimes
+        //capitao: capitao
     }
 
     console.log("chegou no create")
@@ -47,7 +40,7 @@ function cadastrarCamp() {
         body: JSON.stringify(payload),
     };
 
-    fetch(`${URL_API}tournament`, options)
+    fetch(`${URL_API}team`, options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);
@@ -58,12 +51,12 @@ function cadastrarCamp() {
             console.log(payload);
         }).catch(e => {
             console.log(e);
-            alert("ERRO ao Cadastrar Campeonato!")
+            alert("ERRO ao Cadastrar Time!")
         });
 
-        alert("Campeonato Cadastrado com sucesso!")
+        alert("Time Cadastrado com Sucesso!")
         window.location.href = '/'
-      
+
 }
 
 console.log("script loaded")

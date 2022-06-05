@@ -4,13 +4,13 @@
 <div>
     <div>
         <!-- Só pode ser acessado por adms -->
-        <h3>Atualizar Campeonato</h3>
-        <form name="updateTournament">
+        <h3>Atualizar time</h3>
+        <form name="updateTime">
             
             <p>
                 <div>
-                    <label for="nome">Nome do Campeonato</label>
-                    <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
+                    <label for="nome">Nome do Time</label>
+                    <input type="text" name="nome" placeholder="Digite o Nome do Time">
                 </div>
                 </p>
 
@@ -29,36 +29,15 @@
 
                 <p>
                 <div>
-                    <label for="premiacao">Premiação</label>
-                    <input type="text" name="premiacao" placeholder="Digite a Premiação">
+                    <label for="capitao">Capitão</label>
+                    <input type="int" name="capitao" placeholder="Digite o ID do capitão">
                 </div>  
                 </p>
-
-                <p>
-                <div>
-                    <label for="dataCampeonato">Data de início do campeonato</label>
-                    <input type="date" name="dataStartCamp">
-                </div>
-                </p>
-
-                <p>
-                    <div>
-                        <label for="dataCampeonato">Data de término do campeonato</label>
-                        <input type="date" name="dataEndCamp">
-                    </div>
-                    </p>
-
-                <p>
-                <div>
-                    <label for="qtdTimes">Quantidade de times</label>
-                    <input type="number" name="qtdTimes"min="2" max="300" placeholder="Digite a Quantidade de Times">
-                </div>     
-                </p>
            
-            <button onclick="atualizarTorneio()">Atualizar</button>
+            <button onclick="atualizarTeam()">Atualizar</button>
         </form>
     </div>
 </div>
 
 <script src="/globals.js"></script>
-<script src="/script.js"></script>
+<script src="./script.js"></script>

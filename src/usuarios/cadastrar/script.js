@@ -13,13 +13,20 @@ function cadastrar() {
     var campos = document.getElementsByTagName("input");
     
     for(var i = 0; i < elementos.length; i++){
+        if(i==5){
+            if(cargo == "disabled"){
+                alert("Escolha um cargo!");
+                campos[i].focus();
+                return
+            }
+        }
         if(campos[i].value == ""){
             alert("Preencha o campo " + campos[i].name + "!" );
             campos[i].focus();
             return;
         }
     }
-
+    
     const payload = {
         nome: nome,
         email: email,
