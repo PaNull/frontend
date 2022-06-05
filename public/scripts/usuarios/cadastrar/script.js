@@ -53,11 +53,11 @@ function cadastrar() {
         }).catch(e => {
             console.log(e);
             alert("ERRO ao Cadastrar usuário!")
-        })
-        .then(a => {
+        });
+
             alert("Usuario Cadastrado com sucesso!")
             window.location.href = '/'
-        });
+      
 
 
     /* FETCH GET

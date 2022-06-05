@@ -9,39 +9,55 @@
         <h3>Atualizar Campeonato</h3>
         <form name="updateTournament">
             
-            <div>
-                <input type="text" name="nome">
-                <label for="nome">Nome do Campeonato</label>
-            </div>
-            <div>
+            <p>
+                <div>
+                    <label for="nome">Nome do Campeonato</label>
+                    <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
+                </div>
+                </p>
 
-                <select name="modalidade">
-                    <option value="" disabled selected>Selecione a modalidade:</option>
-                    <option value="1">Basquete</option>
-                    <option value="2">Futebol</option>
-                    <option value="3">Futsal</option>
-                    <option value="4">Vôlei</option>
-                </select>
-                <label for="modalidade">Modalidade</label>
-            </div>
+                <p>
+                <div>
+                    <label for="modalidade">Modalidade</label>
+                    <select name="modalidade">
+                        <option value="disabled" disabled selected>Selecione a modalidade:</option>
+                        <option value="Basquete">Basquete</option>
+                        <option value="Futebol">Futebol</option>
+                        <option value="Futsal">Futsal</option>
+                        <option value="Vôlei">Vôlei</option>
+                    </select>
+                </div>
+                </p>
 
-            <div>
-                <input type="text" name="premiacao">
-                <label for="premiacao">Premiação</label>
-            </div>  
+                <p>
+                <div>
+                    <label for="premiacao">Premiação</label>
+                    <input type="text" name="premiacao" placeholder="Digite a Premiação">
+                </div>  
+                </p>
 
-            <div>
-                <input type="date" name="dataCampeonato">
-                <label for="dataCampeonato">Data do campeonato</label>
-              
-            </div>
+                <p>
+                <div>
+                    <label for="dataCampeonato">Data de início do campeonato</label>
+                    <input type="date" name="dataStartCamp">
+                </div>
+                </p>
 
-            <div>
-                <input type="number" name="qtdTimes"min="2" max="300">
-                <label for="qtdTimes">Quantidade de times</label>
-            </div>     
+                <p>
+                    <div>
+                        <label for="dataCampeonato">Data de término do campeonato</label>
+                        <input type="date" name="dataEndCamp">
+                    </div>
+                    </p>
+
+                <p>
+                <div>
+                    <label for="qtdTimes">Quantidade de times</label>
+                    <input type="number" name="qtdTimes"min="2" max="300" placeholder="Digite a Quantidade de Times">
+                </div>     
+                </p>
            
-            <button onclick="updateTournament()">Atualizar</button>
+            <button onclick="atualizarTorneio()">Atualizar</button>
         </form>
     </div>
 </div>

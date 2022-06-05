@@ -64,12 +64,12 @@ function atualizarUser() {
             console.log(payload);
         }).catch(e => {
             console.log(e);
-            alert("ERRO ao Atualizar usuário!")
-        })
-        .then(a => {
-            alert("Usuario Atualizado com sucesso!")
-            window.location.href = '/pages/usuarios/lista'
+            alert("ERRO ao Atualizar Usuário!")
         });
+
+        alert("Usuario Atualizado com Sucesso!")
+        window.location.href = '/pages/usuarios/lista'
+
 }
 
 console.log("script loaded")
