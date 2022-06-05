@@ -12,8 +12,8 @@ app.set('view engine', 'html');
 //app.use('/public', express.static(path.join(__dirname + '../public')));
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.set('views', path.join(__dirname, '/pages'));
-app.use(express.static('public')) //setando a pasta estática
+app.set('views', path.join(__dirname, '/src'));
+app.use(express.static('src')) //setando a pasta estática
 
 
 //Chamando nossas rotas definidas no arquivo 'route.js'

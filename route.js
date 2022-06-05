@@ -14,65 +14,76 @@ app.use(bodyParser.json())
 var path = require('path'); //utilizaremos o path para manipular e setar os diretórios das views
 router.use('/public', express.static(path.join(__dirname + '../public')));
 
-const pageLogin = 'usuarios/login/index'
-const pagePerfil = 'usuarios/perfil/index'
-
 
 router.get("/", function(req, res){
     res.render('index.html')
 })
 
-router.get("/pages/campeonatos/cadastrar", function(req, res){
+router.get("/campeonatos/cadastrar", function(req, res){
     res.render('./campeonatos/cadastrar/index')
 })
 
-router.get("/pages/campeonatos/lista", function(req, res){
+router.get("/campeonatos/lista", function(req, res){
     res.render('./campeonatos/lista/index')
 })
 
-router.get("/pages/campeonatos/update", function(req, res){
+router.get("/campeonatos/update", function(req, res){
     res.render('./campeonatos/update/index')
 })
 
-router.get("/pages/campeonatos/listaadm", function(req, res){
+router.get("/campeonatos/listaadm", function(req, res){
     res.render('./campeonatos/listaAdm/index')
 })
 
-router.get("/pages/usuarios/cadastrar", function(req, res){
+router.get("/usuarios/cadastrar", function(req, res){
     res.render('./usuarios/cadastrar/index')
 })
 
-router.get("/pages/usuarios/lista", function(req, res){
+router.get("/usuarios/lista", function(req, res){
     res.render('./usuarios/lista/index')
 })
 
-router.get("/pages/usuarios/perfil", function(req, res){
+router.get("/usuarios/perfil", function(req, res){
     res.render('./usuarios/perfil/index')
 })
 
-router.get("/pages/usuarios/update", function(req, res){
+router.get("/usuarios/update", function(req, res){
     res.render('./usuarios/update/index')
 })
 
-
-
+router.get("/login", function(req, res){
+    res.render('./usuarios/login/index')
+})
 
 //Rota de Login -> Post -> Recebendo os dados do formulário
-/*
-router.post('/pages/usuarios/login', (req, res) => {
 
-
-    //req.body.login //recebendo o conteúdo/input do formuario
+router.post('/set-session', (req, res) => {
+    console.log('chegou aqui')
+    // request.post('https://fho-project-application.herokuapp.com/api/user/login', { form:{ ...req.body }}, function (error, response, body) {
+    //     if (body?.data) {
+            
+    //         //logado com sucesso
+    //         //criando a sessão
+    //         req.session.login = body.data;
+    //         sessionUser = body.data;
     
+    //         //vai para a pag meu perfil passando login, nome, email, dataNasc {...} como parâmetro
+    //         res.render(pagePerfil, {
+    //             login: body.data.nome,
+    //             nome: body.data.nome,
+    //             email: body.data.email,
+    //             dataNasc: body.data.dataNascimento,
+    //             cpf: body.data.cpf,
+    //             nacionalidade: body.data.nacionalidade,
+    //             cargo: body.data.cargo                
+    //         }); 
 
-    res.send("Funcionou") //exibindo o conteudo
+    //     } else {
+    //         res.render(pageLogin);
+    //     }
 
-    
-    req.body.login //recebendo o conteúdo/input do formuario
-    res.send('Texto: '+ req.body.login) //exibindo o conteudo
-
+    // });  
 })
-*/
 
 /* 
     
@@ -110,32 +121,6 @@ router.post('/pages/usuarios/login', (req, res) => {
         }
 
     });  
-    })  */
-
-
-
-//Rota de Login -> Get -> (Acessou a pág login -> Verificando se já está logado -> Redireciona caso Sim)
-router.get('/pages/usuarios/login', (req, res) => {
-
-    res.render(pageLogin)
-
-    //console.log(req.session.login)
-
- 
-    //Verificando se está logado -> só acessa essa pág se estiver logado
-/*     if (req.session.login) {
-
-         res.render(pagePerfil, {
-            login: req.session.login
-        }) //vai para a pag meu perfil 
-
-        //passando login como parâmetro
-    } else {
-        res.render(pageLogin) //não está logado -> não pode acessar a pág. Fica na pág de login
-    }
- */
-
-})
-
+    }) */
 
 module.exports = router;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login/loginStyle.css">
+
+    <!-- LINKS TEMPORÁRIOS PARA O FRONT USAR -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login/loginStyle.css">
+
+    <title>Login</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+                <h1><a href="../../index.html" id="logo">NULL Sports</a></h1>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current_page_item"><a href="../../index.html">Home</a></li>
+                        <li><a href="../../campeonatos/cadastrar/index.html">Crie seu torneio</a></li>
+                        <li><a href="../../usuarios/cadastrar/index.html">Cadastrar</a></li>
+                        <li><a href="../../campeonatos/lista/index.html">Torneios em Andamento</a></li>
+                        <li><a href="#">Meu Perfil</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+    
+    <div class="login"  style="margin-top: 30px">
+        <div class="content">
+            <h1 class="title">Faça seu login:</h1>
+            <form name="formularioLogin">
+                <p class="pUser">User:</p>
+                <input type="text" name="login" placeholder="Digite seu nome de usuário..." class="inputUsuario"><br>
+                <p class="pPassword">Password:</p>
+                <input type="text" name="password" placeholder="Digite sua senha..." class="inputPassword"><br>
+
+                <input type="button" value="Logar" class="inputLogar" onclick="login()">
+            </form>
+        </div>
+    </div>
+    <script>
+    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="/globals.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

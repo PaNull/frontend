@@ -1,0 +1,76 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">    
+
+    <!-- Links temporários -->
+    <link rel="stylesheet" type="text/css" href="/css/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">    
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+                <h1><a href="../../index.html" id="logo">NULL Sports</a></h1>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/campeonatos/cadastrar">Crie seu torneio</a></li>
+                        <li><a href="/usuarios/cadastrar">Cadastrar</a></li>
+                        <li><a href="/campeonatos/lista">Torneios em Andamento</a></li>
+                        <li><a href="/usuarios/login">Meu Perfil</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+    <div>
+        <div>
+            <!-- Só pode ser acessado por adms -->
+            <form name="updateUser" class="cadastro">
+                <h3>Atualizar Conta</h3>
+                <div>
+                    <label for="nome"><br>Nome:<br></label>
+                    <input type="text" name="nome">
+                </div>
+            
+                <div>
+                    <label for="email"><br>E-mail<br></label>
+                    <input type="email" name="email">
+                </div>
+
+                <div>
+                    <label for="dataNascimento"><br>Aniversario<br></label>
+                    <input type="date" name="dataNascimento">
+                </div>
+
+                <div>
+                    <label for="cpf"><br>CPF<br></label>
+                    <input type="text" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+                </div>
+                
+                <div>
+                    <label for="nacionalidade"><br>Nacionalidade<br></label>
+                    <input type="text" name="nacionalidade">
+                </div>
+            
+                <div>
+                    <label for="cargo"><br>cargo<br></label>
+                    <select name="cargo">
+                        <option value="disabled" disabled selected>Selecione o cargo:</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Jogador">Jogador</option>
+                        <option value="Visitante">Visitante</option>
+                    </select>
+                </div>
+                <input type="button" onclick="atualizarUser()" value="Atualizar">
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="/globals.js"></script>
+<script src="/script.js"></script>

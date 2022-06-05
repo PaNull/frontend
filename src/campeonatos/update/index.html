@@ -1,0 +1,48 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<div>
+    <div>
+        <!-- Só pode ser acessado por adms -->
+        <h3>Atualizar Campeonato</h3>
+        <form name="updateTournament">
+            
+            <div>
+                <input type="text" name="nome">
+                <label for="nome">Nome do Campeonato</label>
+            </div>
+            <div>
+
+                <select name="modalidade">
+                    <option value="" disabled selected>Selecione a modalidade:</option>
+                    <option value="1">Basquete</option>
+                    <option value="2">Futebol</option>
+                    <option value="3">Futsal</option>
+                    <option value="4">Vôlei</option>
+                </select>
+                <label for="modalidade">Modalidade</label>
+            </div>
+
+            <div>
+                <input type="text" name="premiacao">
+                <label for="premiacao">Premiação</label>
+            </div>  
+
+            <div>
+                <input type="date" name="dataCampeonato">
+                <label for="dataCampeonato">Data do campeonato</label>
+              
+            </div>
+
+            <div>
+                <input type="number" name="qtdTimes"min="2" max="300">
+                <label for="qtdTimes">Quantidade de times</label>
+            </div>     
+           
+            <button onclick="updateTournament()">Atualizar</button>
+        </form>
+    </div>
+</div>
+
+<script src="/globals.js"></script>
+<script src="/script.js"></script>
