@@ -1,40 +1,75 @@
-var values = { };
-const id = location.search.slice(1);
+function atualizarTorneio() {
 
-const getTournament = () => {
-    const request = {
-        type:'GET',
-        url:`${URL_API}tournament/${id}`,
-        success: function(response) {
-            values = response.data;
+    let nome = document.getElementsByName("nome")[0].value
+    let modalidade = document.getElementsByName("modalidade")[0].value
+    let premiacao = document.getElementsByName("premiacao")[0].value
+    let dataStartCamp = document.getElementsByName("dataStartCamp")[0].value
+    let dataEndCamp = document.getElementsByName("dataEndCamp")[0].value
+    let qtdTimes = document.getElementsByName("qtdTimes")[0].value
+
+    let elementos = [nome, modalidade, premiacao, dataStartCamp, dataEndCamp, qtdTimes];
+    
+    var campos = document.getElementsByTagName("input");
+   
+    for(var i = 0; i < elementos.length-1; i++){
+        if(i==2){
+            if(modalidade == "disabled"){
+                alert("Escolha uma modalidade!");
+                campos[i].focus();
+                return
+            }
         }
-    };
-    $.ajax(request);
-}
-
-const updateTournament = () => {
-    const formValues = document.forms.updateTournament
-    const payload = {
-        id_campeonato,
-        nome: formValues.nome.value,
-        modalidade: formValues.modalidade.value,
-        premiacao: formValues.premiacao.value,
-        dataCampeonato: formValues.dataCampeonato.value,
-        qtdTimes: formValues.qtdTimes.value,
+        if(campos[i].value == ""){
+            alert("Preencha o campo " + campos[i].name + "!" );
+            campos[i].focus();
+            return;
+        }
     }
-    const request = {
-        type:'PUT',
-        url:`${URL_API}tournament`,
-        dataType: "json",
-        data: payload,
-        success: function(response) {
-            alert(response.message)
-        }
+    
+    var url = window.location.href;
+    url = url.split('?id=');
+    url = url[1];
+    console.log(url);
+
+    const id = url;
+    
+    const payload = {
+        id: id,
+        nome: nome,
+        modalidade: modalidade,
+        dataStartCampeonato: dataStartCamp,
+        dataEndCampeonato: dataEndCamp,
+        premiacao: premiacao,
+        qntdTimes: qtdTimes
+    }
+
+    console.log("chegou no update")
+
+    //FETCH PUT
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
     };
-    $.ajax(request);
+
+    fetch(`${URL_API}tournament`, options)
+        .then(data => {
+            if (!data.ok) {
+                throw Error(data.status);
+            }
+            return data.json();
+
+        }).then(payload => {
+            console.log(payload);
+        }).catch(e => {
+            console.log(e);
+            alert("ERRO ao Atualizar Campeonato!")
+        });
+
+        alert("Campeonato Atualizado com sucesso!")
+        window.location.href = '/pages/campeonatos/lista'
 }
 
-
-getTournament()
-
-// FRONT PEGAR OS CAMPOS DE VALUES PARA PREENCHER O FORMULARIO HTML
+console.log("script loaded")

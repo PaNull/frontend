@@ -70,6 +70,10 @@ function atualizarUser() {
             alert("Usuario Atualizado com sucesso!")
             window.location.href = '/usuarios/lista'
         });
+
+        alert("Usuario Atualizado com Sucesso!")
+        window.location.href = '/pages/usuarios/lista'
+
 }
 
 console.log("script loaded")

@@ -58,7 +58,12 @@ function cadastrarCamp() {
             console.log(payload);
         }).catch(e => {
             console.log(e);
-        }); 
+            alert("ERRO ao Cadastrar Campeonato!")
+        });
+
+        alert("Campeonato Cadastrado com sucesso!")
+        window.location.href = '/'
+      
 }
 
 console.log("script loaded")
