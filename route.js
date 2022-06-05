@@ -58,6 +58,22 @@ router.get("/login", function(req, res){
     res.render('./usuarios/login/index')
 })
 
+router.get("/times/cadastrar", function(req, res){
+    res.render('./times/cadastrar/index')
+})
+
+router.get("/times/lista", function(req, res){
+    res.render('./times/lista/index')
+})
+
+router.get("/times/update", function(req, res){
+    res.render('./times/update/index')
+})
+
+router.get("/sobreProjeto", function(req, res){
+    res.render('./sobreProjeto/index')
+})
+
 router.post('/set-session', async (req, res) => {
     const payload = {...req.body };
     console.log({payload})

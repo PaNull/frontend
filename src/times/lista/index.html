@@ -5,10 +5,6 @@
     <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
     <link rel="stylesheet" type="text/css" href="/css/listaCamp/listaCamp.css">
 
-    <!-- LINKS TEMPORÁRIOS PARA O FRONT USAR -->
-    <link rel="stylesheet" href="/css/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/listaCamp/listaCamp.css">
 </head>
 <body>
     
@@ -25,7 +21,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/campeonatos/cadastrar">Crie seu torneio</a></li>
                         <li><a href="/usuarios/cadastrar">Cadastrar</a></li>
-                        <li  class="current_page_item"><a href="/campeonatos/lista">Torneios em Andamento</a></li>
+                        <li><a href="/campeonatos/lista">Torneios em Andamento</a></li>
                         <li><a href="/usuarios/login">Meu Perfil</a></li>
                     </ul>
                 </nav>
@@ -34,22 +30,19 @@
 
     <div class="consulta" style="margin-top: 30px;">
         <div class="content">
-            <div id="especificCamp">
-                <h3>Pesquisar por campeonato específico</h3>
-                <p>Insira o ID do campeonato:</p>
-                    <input type="number" min="0" id="idTournament">
-                <button class="btnPesquisar" type="submit" onclick="tournamentEspecific()">Pesquisar</button>
+            <div id="especificTeam">
+                <h3>Pesquisar por time específico</h3>
+                <p>Insira o ID do time:</p>
+                    <input type="number" min="0" id="idTeam">
+                <button class="btnPesquisar" type="submit" onclick="teamEspecific()">Pesquisar</button>
     
                 <table id="table_especific" style="display: none;">
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Nome</th>
-                            <th>Premiação</th> 
                             <th>Modalidade</th>
-                            <th>Quantidade de Times</th>
-                            <th>Data de início</th>
-                            <th>Data de término</th>
-                            <th>Etapa</th>
+                            <th>Capitão</th>
                             <th>Excluir</th>
                             <th>Editar</th>
                         </tr>
@@ -63,12 +56,8 @@
                     <tr class="infos">
                         <th class="infos1">Id</th>
                         <th class="infos1">Nome</th>
-                        <th class="infos2">Premiação</th> 
                         <th class="infos3">Modalidade</th>
-                        <th class="infos4">Quantidade de Times</th>
-                        <th class="infos5">Data de início</th>
-                        <th class="infos6">Data de término</th>
-                        <th class="infos7">Etapa</th>
+                        <th class="infos4">Capitão</th>
                         <th class="infos8">Excluir</th>
                         <th class="infos9">Editar</th>
                     </tr>

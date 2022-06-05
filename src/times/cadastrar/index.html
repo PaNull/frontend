@@ -3,7 +3,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
-    
 </head>
 
 <body>
@@ -29,14 +28,14 @@
 
     <div class="cadastro" style="margin-top: 30px;">
         <div class="content">
-            <h3>Novo Campeonato</h3>
+            <h3>Novo Time</h3>
 
-            <form name="cadastrarCampeonato">
+            <form name="cadastrarTime">
 
                 <p>
                 <div>
-                    <label for="nome">Nome do Campeonato</label>
-                    <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
+                    <label for="nome">Nome do Time</label>
+                    <input type="text" name="nome" placeholder="Digite o Nome do Time">
                 </div>
                 </p>
 
@@ -55,33 +54,12 @@
 
                 <p>
                 <div>
-                    <label for="premiacao">Premiação</label>
-                    <input type="text" name="premiacao" placeholder="Digite a Premiação">
+                    <label for="capitao">Capitão</label>
+                    <input type="int" name="capitao" placeholder="Digite o ID do capitão">
                 </div>  
                 </p>
 
-                <p>
-                <div>
-                    <label for="dataCampeonato">Data de início do campeonato</label>
-                    <input type="date" name="dataStartCamp">
-                </div>
-                </p>
-
-                <p>
-                    <div>
-                        <label for="dataCampeonato">Data de término do campeonato</label>
-                        <input type="date" name="dataEndCamp">
-                    </div>
-                    </p>
-
-                <p>
-                <div>
-                    <label for="qtdTimes">Quantidade de times</label>
-                    <input type="number" name="qtdTimes"min="2" max="300" placeholder="Digite a Quantidade de Times">
-                </div>     
-                </p>
-
-                <input type="button" onclick="cadastrarCamp()" value="Cadastrar">
+                <input type="button" onclick="cadastrarTeam()" value="Cadastrar">
 
             </form>
         </div>

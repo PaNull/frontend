@@ -1,51 +1,45 @@
 var list = [];
 
-var list2 = [];
+var list2= [];
 
 const createRowsEspecific = () => {
     document.getElementById("table_especific").style.display = 'table';
     list2.forEach(data => {
         row = `
             <tr>
+                <td> ${ data.id_time } </td>
                 <td> ${ data.nome } </td>
-                <td> ${ data.email } </td>
-                <td> ${ data.cargo } </td>
-                <td> ${ data.cpf } </td>
-                <td> ${ data.dataNascimento } </td>
-                <td> ${ data.nacionalidade } </td>
-                <td> <input type="button" onclick="location.href='/pages/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>    
+                <td> ${ data.modalidade } </td>
+                <td> ${ data.capitao } </td>
+                <td> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir"></td>   
             </tr> 
         `
         $("#table_especific tbody").append(row);
     })
 }
 
-
 const createRows = () => {
     list.forEach(data => {
         row = `
             <tr>
-                <td> ${ data.id_usuario } </td>
+                <td> ${ data.id_time } </td>
                 <td> ${ data.nome } </td>
-                <td> ${ data.cargo } </td>
-                <td> ${ data.cpf } </td>
-                <td> ${ data.dataNascimento } </td>
-                <td> ${ data.nacionalidade } </td>
-                <td> <input type="button" onclick="location.href='/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>               
+                <td> ${ data.modalidade } </td>
+                <td> ${ data.capitao } </td>
+                <td> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir"></td>   
             </tr>
         `
         $("#table_body tr:last").after(row) ;
-        console.log(data.id_usuario)
     })
 }
-/* <td><a href="/usuarios/update?id=${data.id_usuario}">Editar Usuario</a></td> */
 
-const getUsers = () => {
+
+const getTeams = () => {
     const request = {
         type:'GET',
-        url: `${URL_API}users`,
+        url: `${URL_API}teams`,
         success: function(response) {
             list = response.data;
             createRows()
@@ -54,10 +48,10 @@ const getUsers = () => {
     $.ajax(request);
 }
 
-const deleteUser = (id) => {
+const deleteTournament = (id) => {
     const request = {
         type:'DELETE',
-        url: `${URL_API}user/${id}`,
+        url: `${URL_API}teams/${id}`,
         success: (response) => {
             getUsers();
             alert(response.message);
@@ -70,10 +64,10 @@ const deleteUser = (id) => {
     $.ajax(request);
 }
 
-const getEspecificUser = (id) => {
+const getEspecificTeam = (id) => {
     const request = {
         type:'GET',
-        url: `${URL_API}user/${id}`,
+        url: `${URL_API}teams/${id}`,
         success: function({ data }) {
             list2 = [data];
             createRowsEspecific()
@@ -87,14 +81,13 @@ const getEspecificUser = (id) => {
     $.ajax(request);
 }
 
+getTeams()
 
-getUsers();
-
-function teste(){
-    var input = document.getElementById("idUser").value;
+function teamEspecific(){
+    var input = document.getElementById("idTeam").value;
 
     clearScreen();
-    getEspecificUser(input);
+    getEspecificTeam(input);
 }
 
 function clearScreen(){
@@ -104,15 +97,15 @@ function clearScreen(){
     }
 }
 
+
 function confirmar(id){
 
     var id = id;
     var x;
-    var r=confirm("Tem certeza que deseja excluir este usuário?");
+    var r=confirm("Tem certeza que deseja excluir este time?");
 
     if (r==true){
-        excluirUser(id)
-        //x="você pressionou OK!";
+        excluirTeam(id)
     }
     else{
         x="Você pressionou Cancelar!";
@@ -120,14 +113,14 @@ function confirmar(id){
 }
 
 
-function excluirUser(id){
+function excluirTeam(id){
 
      //FETCH PUT
      const options = {
         method: 'DELETE'
     };
 
-    fetch(`${URL_API}user/${id}`, options)
+    fetch(`${URL_API}team/${id}`, options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);
@@ -138,11 +131,11 @@ function excluirUser(id){
             console.log(id);
         }).catch(e => {
             console.log(e);
-            alert("ERRO ao Deletar Usuário!")
+            alert("ERRO ao Deletar Time!")
             return
         });
       
-        alert("Usuario Deletado com Sucesso!")
-        window.location.href = '/usuarios/lista'
+        alert("Time Deletado com Sucesso!")
+        window.location.href = '/times/lista'
        
 }

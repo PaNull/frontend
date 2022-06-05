@@ -4,9 +4,6 @@
     <link rel="stylesheet" href="/css/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
 
-    <!-- Links temporários -->
-    <link rel="stylesheet" href="/css/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
 </head>
 <body>
     <!-- Header -->
@@ -70,7 +67,11 @@
                 <p>   
                     <div>
                         <label for="cargo">Cargo</label>
-                        <input type="text" name="cargo" placeholder="Digite seu cargo">
+                        <select name="cargo">
+                            <option value="disabled" disabled selected>Selecione o cargo:</option>
+                            <option value="Jogador">Jogador</option>
+                            <option value="Tecnico">Tecnico</option>
+                        </select>
                     </div>
                 </p>
 
