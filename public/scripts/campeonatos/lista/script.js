@@ -14,8 +14,8 @@ const createRowsEspecific = () => {
                 <td> ${ data.dataStartCampeonato } </td>
                 <td> ${ data.dataEndCampeonato } </td>
                 <td> ${ data.etapa } </td>
-                <td> <button onclick="deleteUser(${ data.id_campeonato })" class="btnExcluir">Excluir Campeonato</button></td>
-                <td><a href="${data.link}" class="edtUser">Editar Usuario</a></td>
+                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir"></td>   
             </tr> 
         `
         $("#table_especific tbody").append(row);
@@ -130,7 +130,7 @@ function excluirCamp(id){
         method: 'DELETE'
     };
 
-    fetch(`${URL_API}user/${id}`, options)
+    fetch(`${URL_API}tournament/${id}`, options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);

@@ -13,8 +13,8 @@ const createRowsEspecific = () => {
                 <td> ${ data.cpf } </td>
                 <td> ${ data.dataNascimento } </td>
                 <td> ${ data.nacionalidade } </td>
-                <td> <button onclick="deleteUser(${ data.id_usuario })" class="btnExcluir">Excluir Usuario</button></td>
-                <td><a href="${data.link}" class="edtUser">Editar Usuario</a></td>
+                <td> <input type="button" onclick="location.href='/pages/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>    
             </tr> 
         `
         $("#table_especific tbody").append(row);
