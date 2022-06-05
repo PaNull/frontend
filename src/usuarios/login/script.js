@@ -1,23 +1,28 @@
-const login = () => {
+function testeDoLogin(){
     const email = document.forms.formularioLogin.login.value;
     const password = document.forms.formularioLogin.password.value;
-
-    const request = {
-        type:'POST',
-        url: `http://localhost:3000/set-session`,
-        data: { email, password },
-        success: function(response) {
-            list = response.data;
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
         },
-        error: () => {
-            console.log("ERRO");
-        }
+        body: JSON.stringify({ email, password }),
     };
 
-    $.ajax(request);
-}  
-console.log('carregou')
+    fetch(`http://localhost:3000/set-session`, options)
+        .then(data => {
+            if (!data.ok) {
+                throw Error(data.status);
+            }
+            return data.json();
 
+        }).then(payload => {
+            console.log(payload);
+        }).catch(e => {
+            console.log(e);
+            alert("Essa conta não existe!")
+        });
+}
 
    /*  request(options, function (error, response, body) {
 

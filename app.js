@@ -1,6 +1,6 @@
 const express = require('express'); //utilizaremos o módulo express 
 const session = require('express-session'); //utilizaremos o express-session para manipular as sessões
-var request = require('request');
+const bodyParser = require('body-parser');
 
 const port = 3000;
 var path = require('path'); //utilizaremos o path para manipular e setar os diretórios das views
@@ -9,12 +9,18 @@ const app = express(); //chamando o express dentro da variável app
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-//app.use('/public', express.static(path.join(__dirname + '../public')));
-//app.use(express.static(path.join(__dirname, 'public')));
-
 app.set('views', path.join(__dirname, '/src'));
 app.use(express.static('src')) //setando a pasta estática
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }));
 
 //Chamando nossas rotas definidas no arquivo 'route.js'
 let userRoute = require('./route'); 
