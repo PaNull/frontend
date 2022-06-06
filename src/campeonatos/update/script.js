@@ -66,10 +66,13 @@ function atualizarTorneio() {
         }).catch(e => {
             console.log(e);
             alert("ERRO ao Atualizar Campeonato!")
+            window.location.href = '/campeonatos/lista'
+            return
         });
 
+        window.location.href = '/campeonatos/lista'
         alert("Campeonato Atualizado com sucesso!")
-        window.location.href = '/pages/campeonatos/lista'
+        
 }
 
 console.log("script loaded")

@@ -14,7 +14,7 @@ const createRowsEspecific = () => {
                 <td> ${ data.dataStartCampeonato } </td>
                 <td> ${ data.dataEndCampeonato } </td>
                 <td> ${ data.etapa } </td>
-                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar" class="btnPesquisar"></td>
+                <td> <input type="button" onclick="location.href='/campeonatos/update?id=${data.id_campeonato}'" value="Editar" class="btnPesquisar"></td>
                 <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir" class="btnExcluir"></td>   
             </tr> 
         `
@@ -34,7 +34,7 @@ const createRows = () => {
                 <td class="infos_camp"> ${ data.dataStartCampeonato } </td>
                 <td class="infos_camp"> ${ data.dataEndCampeonato } </td>
                 <td class="infos_camp"> ${ data.etapa } </td>
-                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar" class="btnEditar"></td>
+                <td> <input type="button" onclick="location.href='/campeonatos/update?id=${data.id_campeonato}'" value="Editar" class="btnEditar"></td>
                 <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir" class="btnExcluir"></td>   
             </tr>
         `
@@ -109,7 +109,7 @@ function confirmar(id){
 
     var id = id;
     var x;
-    var r=confirm("Tem certeza que deseja excluir este usuário?");
+    var r=confirm("Tem certeza que deseja excluir este campeonato?");
 
     if (r==true){
         excluirCamp(id)
@@ -146,6 +146,6 @@ function excluirCamp(id){
         });
       
         alert("Campeonato Deletado com Sucesso!")
-        window.location.href = '/pages/campeonatos/lista'
+        window.location.href = '/campeonatos/lista'
        
 }

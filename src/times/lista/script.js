@@ -137,5 +137,4 @@ function excluirTeam(id){
       
         alert("Time Deletado com Sucesso!")
         window.location.href = '/times/lista'
-       
 }

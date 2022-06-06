@@ -1,28 +1,74 @@
-function testeDoLogin(){
-    const email = document.forms.formularioLogin.login.value;
-    const password = document.forms.formularioLogin.password.value;
+const pagePerfil = '/usuarios/perfil'
+
+function aaaaa(){
+    let email = document.getElementsByName("login")[0].value
+    let password = document.getElementsByName("password")[0].value
+
+    var info = new Boolean(false)
+
+    const payload = {
+        email: email,
+        password: password
+    }
+
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(payload),
     };
+    
+    //FETCH POST
+    fetch(`${URL_API}user/login`, options)
+    .then(data => {
+        if (!data.ok) {
+            throw Error(data.status);
+        }
+        return data.json();
 
-    fetch(`http://localhost:3000/set-session`, options)
-        .then(data => {
-            if (!data.ok) {
-                throw Error(data.status);
-            }
-            return data.json();
+    }).then(payload => {
 
-        }).then(payload => {
-            console.log(payload);
-        }).catch(e => {
-            console.log(e);
-            alert("Essa conta não existe!")
-        });
+        /* console.log(payload);
+        console.log('Deu certo')
+        console.log(payload.data) */
+
+        if (payload?.data) {
+            //logado com sucesso
+
+            //Criando a Sessão:
+            // Salva os dados na sessionStorage
+            sessionStorage.setItem('user', payload.data.nome);
+            //                      'chave', 'valor'
+
+            // Obtém os dados da sessionStorage
+            //var data = sessionStorage.getItem('chave');
+    
+            sessaoUsuario = payload.data.nome
+
+            //res.render(pagePerfil)
+            window.location.href = pagePerfil
+
+       /*      res.render(pagePerfil, {
+                login: payload.data.nome,
+                nome: payload.data.nome,
+                email: payload.data.email,
+                dataNasc: payload.data.dataNascimento,
+                cpf: payload.data.cpf,
+                nacionalidade: payload.data.nacionalidade,
+                cargo: payload.data.cargo                
+            }); */
+        }
+
+    }).catch(e => {
+        console.log('erro e: ' + e);
+        alert("ERRO ao LOGAR usuário!")
+    });
 }
+            
+
+
+  
 
    /*  request(options, function (error, response, body) {
 
@@ -53,6 +99,4 @@ function testeDoLogin(){
             
         } else {
             res.render(pageLogin);
-        }
-
-    });  */
+        } */

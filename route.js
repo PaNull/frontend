@@ -74,8 +74,9 @@ router.get("/sobreProjeto", function(req, res){
     res.render('./sobreProjeto/index')
 })
 
-router.post('/set-session', async (req, res) => {
-    const payload = {...req.body };
+router.get('/session', async (req, res) => {
+    res.send('funcionou')
+   /*  const payload = {...req.body };
     console.log({payload})
     await request.post('https://fho-project-application.herokuapp.com/api/user/login', {form:payload}, function (error, response, body) {
         console.log({body})
@@ -94,7 +95,7 @@ router.post('/set-session', async (req, res) => {
         } else {
             res.render('./usuarios/login/index')
         }
-    });  
+    });   */
 })
 
 module.exports = router;
