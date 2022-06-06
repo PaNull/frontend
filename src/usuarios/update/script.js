@@ -72,7 +72,7 @@ function atualizarUser() {
         });
 
         alert("Usuario Atualizado com Sucesso!")
-        window.location.href = '/pages/usuarios/lista'
+        window.location.href = '/usuarios/lista'
 
 }
 

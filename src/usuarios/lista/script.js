@@ -13,7 +13,7 @@ const createRowsEspecific = () => {
                 <td> ${ data.cpf } </td>
                 <td> ${ data.dataNascimento } </td>
                 <td> ${ data.nacionalidade } </td>
-                <td> <input type="button" onclick="location.href='/pages/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
+                <td> <input type="button" onclick="location.href='/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
                 <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>    
             </tr> 
         `

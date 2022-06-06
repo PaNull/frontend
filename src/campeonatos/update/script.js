@@ -69,7 +69,7 @@ function atualizarTorneio() {
         });
 
         alert("Campeonato Atualizado com sucesso!")
-        window.location.href = '/pages/campeonatos/lista'
+        window.location.href = '/campeonatos/lista'
 }
 
 console.log("script loaded")
