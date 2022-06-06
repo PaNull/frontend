@@ -14,8 +14,8 @@ const createRowsEspecific = () => {
                 <td> ${ data.dataStartCampeonato } </td>
                 <td> ${ data.dataEndCampeonato } </td>
                 <td> ${ data.etapa } </td>
-                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir"></td>   
+                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar" class="btnPesquisar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir" class="btnExcluir"></td>   
             </tr> 
         `
         $("#table_especific tbody").append(row);
@@ -26,16 +26,16 @@ const createRows = () => {
     list.forEach(data => {
         row = `
             <tr>
-                <td> ${ data.id_campeonato } </td>
-                <td> ${ data.nome } </td>
-                <td> ${ data.premiacao } </td>
-                <td> ${ data.modalidade } </td>
-                <td> ${ data.qntdTimes } </td>
-                <td> ${ data.dataStartCampeonato } </td>
-                <td> ${ data.dataEndCampeonato } </td>
-                <td> ${ data.etapa } </td>
-                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir"></td>   
+                <td class="infos_camp"> ${ data.id_campeonato } </td>
+                <td class="infos_camp"> ${ data.nome } </td>
+                <td class="infos_camp"> ${ data.premiacao } </td>
+                <td class="infos_camp"> ${ data.modalidade } </td>
+                <td class="infos_camp"> ${ data.qntdTimes } </td>
+                <td class="infos_camp"> ${ data.dataStartCampeonato } </td>
+                <td class="infos_camp"> ${ data.dataEndCampeonato } </td>
+                <td class="infos_camp"> ${ data.etapa } </td>
+                <td> <input type="button" onclick="location.href='/pages/campeonatos/update?id=${data.id_campeonato}'" value="Editar" class="btnEditar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_campeonato})" value="Excluir" class="btnExcluir"></td>   
             </tr>
         `
         $("#table_body tr:last").after(row) ;
