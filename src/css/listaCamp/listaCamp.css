@@ -81,7 +81,6 @@
     padding: 0px;
     border: 3px solid #066a75;
 }
-
 .infos_camp{
     text-align: center;
     color: rgb(66, 74, 77);
@@ -90,27 +89,3 @@
     border-bottom: 2px solid #066a75;
 }
 /* Fim Informações da Consulta */
-
-/* Botão Pesquisar Campeonato */
-.btnPesquisar{
-    padding: 6px;
-    margin-top: 8px;
-}
-
-/* Botão Excluir Campeonato */
-.btnExcluir{
-    margin: 8px;
-    padding: 0px;
-    background-color: rgb(255, 126, 126);
-}
-
-/* Botão Editar Campeonato */
-.btnEditar{
-    color: rgb(255, 255, 255);
-    border: 2px outset rgb(53, 70, 255);
-    border-radius: 6px;
-    background-color: rgb(104, 104, 255);
-    text-decoration: none;
-    padding: 0px;
-    margin-left: 4px;
-}

@@ -11,8 +11,8 @@ const createRowsEspecific = () => {
                 <td> ${ data.nome } </td>
                 <td> ${ data.modalidade } </td>
                 <td> ${ data.capitao } </td>
-                <td> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir"></td>   
+                <td> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar" class="btnEditar"></td>
+                <td> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir" class="btnExcluir"></td>   
             </tr> 
         `
         $("#table_especific tbody").append(row);
