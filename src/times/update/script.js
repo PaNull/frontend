@@ -60,10 +60,11 @@ function atualizarTeam() {
         }).catch(e => {
             console.log(e);
             alert("ERRO ao Atualizar Time!")
+            return
         });
 
-        alert("Time Atualizado com sucesso!")
         window.location.href = '/times/lista'
+        alert("Time Atualizado com sucesso!")
 }
 
 console.log("script loaded")

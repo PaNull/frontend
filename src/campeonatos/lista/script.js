@@ -109,7 +109,7 @@ function confirmar(id){
 
     var id = id;
     var x;
-    var r=confirm("Tem certeza que deseja excluir este usuário?");
+    var r=confirm("Tem certeza que deseja excluir este campeonato?");
 
     if (r==true){
         excluirCamp(id)
