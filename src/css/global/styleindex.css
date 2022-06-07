@@ -78,7 +78,7 @@ input, select:not([type="checkbox"]){
   }
 
 button{
-    width: 100%!important;
+    width: 150;
     cursor: pointer;	
     background: #3d9db3;
     padding: 8px 5px;

@@ -6,18 +6,16 @@
 
 /* Botão Excluir Campeonato */
 .btnExcluir{
-    margin: 8px;
-    padding: 0px;
-    background-color: rgb(255, 126, 126);
+    margin: 0;
+    position: absolute;
+    -ms-transform: translateY(10%);
+    transform: translateY(10%);
 }
 
 /* Botão Editar Campeonato */
 .btnEditar{
-    color: rgb(255, 255, 255);
-    border: 2px outset rgb(53, 70, 255);
-    border-radius: 6px;
-    background-color: rgb(104, 104, 255);
-    text-decoration: none;
-    padding: 0px;
-    margin-left: 4px;
+    margin: 0;
+    position: absolute;
+    -ms-transform: translateY(10%);
+    transform: translateY(10%);
 }
