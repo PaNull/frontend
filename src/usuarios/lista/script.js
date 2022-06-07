@@ -7,14 +7,14 @@ const createRowsEspecific = () => {
     list2.forEach(data => {
         row = `
             <tr>
-                <td> ${ data.nome } </td>
-                <td> ${ data.email } </td>
-                <td> ${ data.cargo } </td>
-                <td> ${ data.cpf } </td>
-                <td> ${ data.dataNascimento } </td>
-                <td> ${ data.nacionalidade } </td>
-                <td> <input type="button" onclick="location.href='/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>    
+                <td class="infos_users"> ${ data.nome } </td>
+                <td class="infos_users"> ${ data.email } </td>
+                <td class="infos_users"> ${ data.cargo } </td>
+                <td class="infos_users"> ${ data.cpf } </td>
+                <td class="infos_users"> ${ data.dataNascimento } </td>
+                <td class="infos_users"> ${ data.nacionalidade } </td>
+                <td class="infos_users"> <input type="button" onclick="location.href='/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
+                <td class="infos_users"> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>    
             </tr> 
         `
         $("#table_especific tbody").append(row);
@@ -26,14 +26,14 @@ const createRows = () => {
     list.forEach(data => {
         row = `
             <tr>
-                <td> ${ data.id_usuario } </td>
-                <td> ${ data.nome } </td>
-                <td> ${ data.cargo } </td>
-                <td> ${ data.cpf } </td>
-                <td> ${ data.dataNascimento } </td>
-                <td> ${ data.nacionalidade } </td>
-                <td> <input type="button" onclick="location.href='/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>               
+                <td class="infos_users"> ${ data.id_usuario } </td>
+                <td class="infos_users"> ${ data.nome } </td>
+                <td class="infos_users"> ${ data.cargo } </td>
+                <td class="infos_users"> ${ data.cpf } </td>
+                <td class="infos_users"> ${ data.dataNascimento } </td>
+                <td class="infos_users"> ${ data.nacionalidade } </td>
+                <td class="infos_users"> <input type="button" onclick="location.href='/usuarios/update?id=${data.id_usuario}'" value="Editar"></td>
+                <td class="infos_users"> <input type="button" onclick="confirmar(${data.id_usuario})" value="Excluir"></td>               
             </tr>
         `
         $("#table_body tr:last").after(row) ;

@@ -98,3 +98,31 @@ th {
  thead{
     border-style: solid;
  }
+
+
+ .infosTable{    /* Id */
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;
+  border: 3px solid #066a75;
+  padding-top: 10px;
+  width: 10%;
+}
+
+.infos_users{
+  text-align: center;
+  color: rgb(66, 74, 77);
+  border-left: 2px solid #066a75;
+  border-right: 2px solid #066a75;
+  border-bottom: 2px solid #066a75;
+  width: 10%;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.infos{
+  color: rgb(255, 255, 255);
+  background-color: rgb(66, 74, 77);
+  text-align: center;
+  width: 500px;
+}
