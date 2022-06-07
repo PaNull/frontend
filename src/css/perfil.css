@@ -8,7 +8,8 @@
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
-    margin-bottom: 30px
+    margin-bottom: 30px;
+
 }
 
 .widget-container .widget {
@@ -30,13 +31,14 @@
     -webkit-background-clip: padding-box;
     -moz-border-radius: 2px;
     -moz-background-clip: padding;
-    border-radius: 2px;
+    border-radius: 6px;
     background-clip: padding-box;
     background-color: #fff;
     font-weight: 300;
+    margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .widget .row {
@@ -137,7 +139,8 @@
     transform: skew(0deg, -10deg);
     margin-top: 30px;
     min-height: 100px;
-    padding: 50px 20px
+    padding: 50px 20px;
+    border: 3px solid #006e12;
 }
 
 .profile-card .card-body .body-description {
@@ -147,12 +150,13 @@
     -ms-transform: skew(0deg, 10deg);
     transform: skew(0deg, 10deg);
     color: #fff;
-    font-size: 13px
+    width: 400px;
+    font-size: 16px;
 }
 
 .profile-card .card-footer {
     margin-top: 50px;
-    padding: 10px 0 20px
+    padding: 10px 0 20px;
 }
 
 .profile-card .card-footer .footer-social {
@@ -217,4 +221,9 @@
 
 .bg-default-darker {
     background-color: #212121
+}
+
+.profile-card{
+    margin-left: 28.4vw;
+    margin-right: 28.4vw;
 }
