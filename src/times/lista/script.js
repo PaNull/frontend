@@ -7,12 +7,12 @@ const createRowsEspecific = () => {
     list2.forEach(data => {
         row = `
             <tr>
-                <td> ${ data.id_time } </td>
-                <td> ${ data.nome } </td>
-                <td> ${ data.modalidade } </td>
-                <td> ${ data.capitao } </td>
-                <td> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar" class="btnEditar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir" class="btnExcluir"></td>   
+                <td class="infos_camp"> ${ data.id_time } </td>
+                <td class="infos_camp"> ${ data.nome } </td>
+                <td class="infos_camp"> ${ data.modalidade } </td>
+                <td class="infos_camp"> ${ data.capitao } </td>
+                <td class="infos_camp"> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar" class="btnEditar"></td>
+                <td class="infos_camp"> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir" class="btnExcluir"></td>   
             </tr> 
         `
         $("#table_especific tbody").append(row);
@@ -23,12 +23,12 @@ const createRows = () => {
     list.forEach(data => {
         row = `
             <tr>
-                <td> ${ data.id_time } </td>
-                <td> ${ data.nome } </td>
-                <td> ${ data.modalidade } </td>
-                <td> ${ data.capitao } </td>
-                <td> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar"></td>
-                <td> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir"></td>   
+                <td class="infos_camp"> ${ data.id_time } </td>
+                <td class="infos_camp"> ${ data.nome } </td>
+                <td class="infos_camp"> ${ data.modalidade } </td>
+                <td class="infos_camp"> ${ data.capitao } </td>
+                <td class="infos_camp"> <input type="button" onclick="location.href='/times/update?id=${data.id_time}'" value="Editar"></td>
+                <td class="infos_camp"> <input type="button" onclick="confirmar(${data.id_time})" value="Excluir"></td>   
             </tr>
         `
         $("#table_body tr:last").after(row) ;
