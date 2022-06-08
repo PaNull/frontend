@@ -7,20 +7,11 @@ let usuarioLogado = null
 
 var logar = require("./src/usuarios/login/script");
 
-var cria_cookie = require("./src/usuarios/login/script");
-
-var valor_cookie = require("./src/usuarios/login/script");
-
-
 // Importing express-session module
 const session = require("express-session")
   
-// Importing file-store module
-const filestore = require("session-file-store")(session)
-  
 // Setting up the server
 var app = express()
-
 
 
 
