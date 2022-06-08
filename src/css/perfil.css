@@ -33,7 +33,6 @@
     -moz-background-clip: padding;
     border-radius: 6px;
     background-clip: padding-box;
-    background-color: #fff;
     font-weight: 300;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -120,6 +119,7 @@
 }
 
 .profile-card .card-header .header-avatar img {
+    border-radius: 30px;
     margin: 25px 0 15px;
     width: 128px;
     height: 128px
@@ -224,6 +224,6 @@
 }
 
 .profile-card{
-    margin-left: 28.4vw;
-    margin-right: 28.4vw;
+    margin-left: 27rem;
+    margin-right: 15.4%;
 }
