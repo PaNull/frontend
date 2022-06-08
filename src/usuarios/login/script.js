@@ -1,7 +1,7 @@
 const pagePerfil = '/usuarios/perfil'
 
 
-function logando(email, password){
+async function logando(email, password){
     const URL_API = 'https://fho-project-application.herokuapp.com/api/'
     const fetch = require("node-fetch");
 
@@ -25,28 +25,35 @@ function logando(email, password){
         body: JSON.stringify(payload),
     };
     
-    //FETCH POST
-    fetch(`${URL_API}user/login`, options)
-    .then(data => {
-        if (!data.ok) {
-            throw Error(data.status);
-        }
+/*     //FETCH POST
+    teste = (async () => {
+        const rawResponse = await fetch(`${URL_API}user/login`, options)
+        respostaID = await rawResponse.json(); 
+        //return await rawResponse.json();      
+        //console.log(content.data.id_usuario);
+    })();
+
+    //console.log(Promise.resolve(teste))
+     */
+    let conteudo
+
+    await fetch(`${URL_API}user/login`, options)
+    .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        // Work with JSON data here
         console.log(data)
-        
-        return data.json();
+        conteudo = data
+        //return(data)
+      })
+      .catch(err => {
+        // Do something for an error here
+      })
 
-    }).then(payload => {
-        console.log("FoI!")
-        if (payload?.data) {        
-            
-    }
+      console.log('aqui', conteudo.data)
 
-    }).catch(e => {
-        console.log('erro e: ' + e);
-        /* alert("Usuário ou Senha incorreto(s)!") */
-    });
-
-    
+      return(conteudo.data)
 }
 
 /* function cria_cookie(nome, valor) {

@@ -79,7 +79,7 @@ router.get("/login", function(req, res){
     res.render('./usuarios/login/index')
 })
  
-router.post("/login/teste", function(req, res){
+router.post("/login/teste", async function(req, res){
     
     const pagePerfil = '/usuarios/perfil'
 
@@ -89,17 +89,20 @@ router.post("/login/teste", function(req, res){
     console.log(email, password)
     
     //FETCH POST
-    logar(email, password);
+    response = await logar(email, password);
+
+    console.log('response: ', response)
 
     //CRIAR A SESSAO
     req.session.email = email
     req.session.password = password
+    req.session.id = response.id_usuario
 
     console.log(req.session.email)
 
     if(req.session.email){
         console.log('entrou no req session')
-        res.render('./usuarios/perfil/index')
+        res.render('./usuarios/perfil/index', email, password, response.id_usuario)
     }
     else{
         res.render('/login', )
