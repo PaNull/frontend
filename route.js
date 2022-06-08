@@ -24,7 +24,6 @@ var app = express()
 
 
 
-
 /* Body Parser */
 
 var path = require('path'); //utilizaremos o path para manipular e setar os diretórios das views

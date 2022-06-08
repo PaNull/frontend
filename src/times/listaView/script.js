@@ -1,3 +1,6 @@
+let teste = usuarioLogado
+console.log(teste)
+
 var list = [];
 
 var list2= [];
