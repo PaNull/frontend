@@ -5,17 +5,19 @@ var list2= [];
 const createRowsEspecific = () => {
     document.getElementById("table_especific").style.display = 'table';
     list2.forEach(data => {
+        /* console.log(data)
+        console.log(data.teamA.idTime) */
         row = `
             <tr>
                 <td> ${ data.partidaId } </td>
                 <td> ${ data.resultado } </td>
                 <td> ${ data.dataPartida } </td>
                 <td> ${ data.ganhadorId } </td>
-                <td> ${ data.teamA.idTime } </td>
-                <td> ${ data.teamA.ganhadorId } </td>
+                <td> ${ data.teamA.idTime} </td>
+                <td> ${ data.teamA.nome } </td>
                 <td> ${ data.teamB.idTime } </td>
-                <td> ${ data.teamB.ganhadorId } </td>
-                <td> <input type="button" onclick="location.href='/times/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
+                <td> ${ data.teamB.nome } </td>
+                <td> <input type="button" onclick="location.href='/partidas/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
                 <td> <input type="button" onclick="confirmar(${data.partidaId})" value="Excluir" class="btnExcluir"></td>   
             </tr> 
         `
@@ -25,17 +27,19 @@ const createRowsEspecific = () => {
 
 const createRows = () => {
     list.forEach(data => {
+        /* console.log(data)
+        console.log(data.teamA.idTime) */
         row = `
             <tr>
             <td> ${ data.partidaId } </td>
             <td> ${ data.resultado } </td>
             <td> ${ data.dataPartida } </td>
             <td> ${ data.ganhadorId } </td>
-            <td> ${ data.teamA.idTime } </td>
-            <td> ${ data.teamA.ganhadorId } </td>
+            <td> ${ data.teamA.idTime} </td>
+            <td> ${ data.teamA.nome } </td>
             <td> ${ data.teamB.idTime } </td>
-            <td> ${ data.teamB.ganhadorId } </td>
-            <td> <input type="button" onclick="location.href='/times/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
+            <td> ${ data.teamB.nome } </td>
+            <td> <input type="button" onclick="location.href='/partidas/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
             <td> <input type="button" onclick="confirmar(${data.partidaId})" value="Excluir" class="btnExcluir"></td> 
             </tr>
         `
@@ -59,7 +63,7 @@ const getMatch = () => {
 const deleteMatch = (id) => {
     const request = {
         type:'DELETE',
-        url: `${URL_API}matches/${id}`,
+        url: `${URL_API}match/${id}`,
         success: (response) => {
             getMatch();
             alert(response.message);
@@ -75,8 +79,9 @@ const deleteMatch = (id) => {
 const getEspecificMatch = (id) => {
     const request = {
         type:'GET',
-        url: `${URL_API}matches/${id}`,
+        url: `${URL_API}match/${id}`,
         success: function({ data }) {
+            console.log(data.partidaId)
             list2 = [data];
             createRowsEspecific()
         },

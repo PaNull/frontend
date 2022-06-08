@@ -105,12 +105,6 @@ router.post("/login/teste", async function(req, res){
     else{
         res.render('/login')
     }
-    //teste com cookie
-    //document.cookie = "campanha=Promo50; expires=Mon, 29 Oct 2018 12:00:00 UTC; path=/";
-
-    /* cria_cookie(email, password);
-
-    valor_cookie(email); */
     
 }) 
 
@@ -148,26 +142,6 @@ router.get("/sobreProjeto", function(req, res){
 
 router.get('/session', async (req, res) => {
     res.send('funcionou')
-   /*  const payload = {...req.body };
-    console.log({payload})
-    await request.post('https://fho-project-application.herokuapp.com/api/user/login', {form:payload}, function (error, response, body) {
-        console.log({body})
-        if (body?.data) {
-            req.session.user = body.data;
-    
-            res.render('/usuarios/perfil', {
-                login: body.data.nome,
-                nome: body.data.nome,
-                email: body.data.email,
-                dataNasc: body.data.dataNascimento,
-                cpf: body.data.cpf,
-                nacionalidade: body.data.nacionalidade,
-                cargo: body.data.cargo                
-            }); 
-        } else {
-            res.render('./usuarios/login/index')
-        }
-    });   */
 })
 
 module.exports = router;

@@ -1,21 +1,16 @@
-function atualizarTeam() {
+function atualizarMatch() {
 
-    let nome = document.getElementsByName("nome")[0].value
-    let modalidade = document.getElementsByName("modalidade")[0].value
-    let capitao = document.getElementsByName("capitao")[0].value
+    let resultado = document.getElementsByName("resultado")[0].value
+    let idCampeao = document.getElementsByName("idCampeao")[0].value
 
-    let elementos = [nome, modalidade, capitao];
     
+    let elementos = [resultado, idCampeao];
+    
+    console.log(elementos)
+
     var campos = document.getElementsByTagName("input");
    
-    for(var i = 0; i < elementos.length-1; i++){
-        if(i==1){
-            if(modalidade == "disabled"){
-                alert("Escolha uma modalidade!");
-                campos[i].focus();
-                return
-            }
-        }
+    for(var i = 0; i < elementos.length; i++){
         if(campos[i].value == ""){
             alert("Preencha o campo " + campos[i].name + "!" );
             campos[i].focus();
@@ -29,12 +24,12 @@ function atualizarTeam() {
     console.log(url);
 
     const id = url;
+    console.log(id)
     
     const payload = {
         id: id,
-        nome: nome,
-        modalidade: modalidade
-        //capitao: capitao
+        resultado: resultado,
+        ganhadorId: idCampeao
     }
 
     console.log("chegou no update")
@@ -48,7 +43,7 @@ function atualizarTeam() {
         body: JSON.stringify(payload),
     };
 
-    fetch(`${URL_API}team`, options)
+    fetch(`${URL_API}match`, options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);
@@ -59,12 +54,12 @@ function atualizarTeam() {
             console.log(payload);
         }).catch(e => {
             console.log(e);
-            alert("ERRO ao Atualizar Time!")
+            alert("ERRO ao Atualizar Partida!")
             return
         });
 
-        window.location.href = '/times/lista'
-        alert("Time Atualizado com sucesso!")
+        window.location.href = '/partidas/lista'
+        alert("Partida Atualizada com sucesso!")
 }
 
 console.log("script loaded")

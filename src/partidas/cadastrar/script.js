@@ -7,6 +7,8 @@ function cadastrarPartida() {
     
     let elementos = [timeA, timeB, data, id];
     
+    console.log(elementos)
+
     var campos = document.getElementsByTagName("input");
    
     for(var i = 0; i < elementos.length; i++){
@@ -35,7 +37,7 @@ function cadastrarPartida() {
         body: JSON.stringify(payload),
     };
 
-    fetch(`${URL_API}match`, options)
+    fetch(`https://fho-project-application.herokuapp.com/api/matches`, options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);
@@ -50,7 +52,7 @@ function cadastrarPartida() {
         });
 
         alert("Partida Cadastrada com Sucesso!")
-        window.location.href = '/'
+        window.location.href = '/' 
 
 }
 
