@@ -9,16 +9,16 @@ const createRowsEspecific = () => {
         console.log(data.teamA.idTime) */
         row = `
             <tr>
-                <td> ${ data.partidaId } </td>
-                <td> ${ data.resultado } </td>
-                <td> ${ data.dataPartida } </td>
-                <td> ${ data.ganhadorId } </td>
-                <td> ${ data.teamA.idTime} </td>
-                <td> ${ data.teamA.nome } </td>
-                <td> ${ data.teamB.idTime } </td>
-                <td> ${ data.teamB.nome } </td>
-                <td> <input type="button" onclick="location.href='/partidas/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
-                <td> <input type="button" onclick="confirmar(${data.partidaId})" value="Excluir" class="btnExcluir"></td>   
+                <td class="infos_camp"> ${ data.partidaId } </td>
+                <td class="infos_camp"> ${ data.resultado } </td>
+                <td class="infos_camp"> ${ data.dataPartida } </td>
+                <td class="infos_camp"> ${ data.ganhadorId } </td>
+                <td class="infos_camp"> ${ data.teamA.idTime} </td>
+                <td class="infos_camp"> ${ data.teamA.nome } </td>
+                <td class="infos_camp"> ${ data.teamB.idTime } </td>
+                <td class="infos_camp"> ${ data.teamB.nome } </td>
+                <td class="infos_camp"> <input type="button" onclick="location.href='/partidas/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
+                <td class="infos_camp"> <input type="button" onclick="confirmar(${data.partidaId})" value="Excluir" class="btnExcluir"></td>   
             </tr> 
         `
         $("#table_especific tbody").append(row);
@@ -31,16 +31,16 @@ const createRows = () => {
         console.log(data.teamA.idTime) */
         row = `
             <tr>
-            <td> ${ data.partidaId } </td>
-            <td> ${ data.resultado } </td>
-            <td> ${ data.dataPartida } </td>
-            <td> ${ data.ganhadorId } </td>
-            <td> ${ data.teamA.idTime} </td>
-            <td> ${ data.teamA.nome } </td>
-            <td> ${ data.teamB.idTime } </td>
-            <td> ${ data.teamB.nome } </td>
-            <td> <input type="button" onclick="location.href='/partidas/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
-            <td> <input type="button" onclick="confirmar(${data.partidaId})" value="Excluir" class="btnExcluir"></td> 
+            <td class="infos_camp"> ${ data.partidaId } </td>
+            <td class="infos_camp"> ${ data.resultado } </td>
+            <td class="infos_camp"> ${ data.dataPartida } </td>
+            <td class="infos_camp"> ${ data.ganhadorId } </td>
+            <td class="infos_camp"> ${ data.teamA.idTime} </td>
+            <td class="infos_camp"> ${ data.teamA.nome } </td>
+            <td class="infos_camp"> ${ data.teamB.idTime } </td>
+            <td class="infos_camp"> ${ data.teamB.nome } </td>
+            <td class="infos_camp"> <input type="button" onclick="location.href='/partidas/update?id=${data.partidaId}'" value="Editar" class="btnEditar"></td>
+            <td class="infos_camp"> <input type="button" onclick="confirmar(${data.partidaId})" value="Excluir" class="btnExcluir"></td> 
             </tr>
         `
         $("#table_body tr:last").after(row) ;
