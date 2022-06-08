@@ -43,16 +43,12 @@ async function logando(email, password){
       })
       .then(data => {
         // Work with JSON data here
-        console.log(data)
         conteudo = data
         //return(data)
       })
       .catch(err => {
         // Do something for an error here
       })
-
-      console.log('aqui', conteudo.data)
-
       return(conteudo.data)
 }
 

@@ -1,6 +1,9 @@
-const res = require("express/lib/response");
+usuarioLogado = JSON.parse(user.replace(/&#34;/g,'"'));
+console.log(usuarioLogado)
 
-const logout = (nome) => {
+
+
+/* const logout = (nome) => {
 const pageLogin = 'usuarios/login/index'
 
     const request = {
@@ -13,4 +16,4 @@ const pageLogin = 'usuarios/login/index'
     };
     //window.location.href="../login/index.html"
     res.render(pageLogin)
-}
+} */

@@ -3,6 +3,8 @@ const router = express.Router();
 var request = require('request');
 const bodyParsers = require('body-parser')
 
+let usuarioLogado = null
+
 var logar = require("./src/usuarios/login/script");
 
 var cria_cookie = require("./src/usuarios/login/script");
@@ -26,6 +28,7 @@ var app = express()
 /* Body Parser */
 
 var path = require('path'); //utilizaremos o path para manipular e setar os diretórios das views
+const { response } = require('express');
 router.use('/public', express.static(path.join(__dirname + '../public')));
 
 const hasSession = (req, res, renderPage) => {
@@ -85,27 +88,23 @@ router.post("/login/teste", async function(req, res){
 
     let email = req.body.login; //pega a informação do campo enviado por POST
     let password = req.body.password;
-
-    console.log(email, password)
     
     //FETCH POST
-    response = await logar(email, password);
-
-    console.log('response: ', response)
+    const response = await logar(email, password);
+    usuarioLogado = response
 
     //CRIAR A SESSAO
     req.session.email = email
     req.session.password = password
     req.session.id = response.id_usuario
 
-    console.log(req.session.email)
-
     if(req.session.email){
         console.log('entrou no req session')
-        res.render('./usuarios/perfil/index', email, password, response.id_usuario)
+        console.log(response)
+        res.render('./usuarios/perfil/index', {user: JSON.stringify(response)})
     }
     else{
-        res.render('/login', )
+        res.render('/login')
     }
     //teste com cookie
     //document.cookie = "campanha=Promo50; expires=Mon, 29 Oct 2018 12:00:00 UTC; path=/";
