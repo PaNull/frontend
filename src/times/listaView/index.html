@@ -1,0 +1,76 @@
+<head>
+    <title>Pesquisar Time</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="/css/listasGlobal/listasGlobal.css">
+    <link rel="stylesheet" type="text/css" href="/css/listaCamp/listaCamp.css">
+
+</head>
+<body>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+                <h1><a href="/" id="logo">NULL Sports</a></h1>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/campeonatos/cadastrar">Crie seu torneio</a></li>
+                        <li><a href="/usuarios/cadastrar">Cadastrar</a></li>
+                        <li><a href="/campeonatos/lista">Torneios em Andamento</a></li>
+                        <li><a href="/usuarios/login">Meu Perfil</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <div class="consulta" style="margin-top: 30px;">
+        <div class="content">
+            <div id="especificTeam">
+                <h3>Pesquisar por time específico</h3>
+                <p>Insira o ID do time:</p>
+                    <input type="number" min="0" id="idTeam">
+                <button class="btnPesquisar" type="submit" onclick="teamEspecific()">Pesquisar</button>
+    
+                <table id="table_especific" style="display: none;">
+                    <thead>
+                        <tr class="infos">
+                            <th class="infos1">Id</th>
+                            <th class="infos1">Nome</th>
+                            <th class="infos3">Modalidade</th>
+                            <th class="infos4">Capitão</th>
+                            <th class="infos8">Entrar</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div>
+            <h3>Campeonatos Cadastrados</h3>
+            <table>
+                <thead>
+                    <tr class="infos">
+                        <th class="infos1">Id</th>
+                        <th class="infos1">Nome</th>
+                        <th class="infos3">Modalidade</th>
+                        <th class="infos4">Capitão</th>
+                        <th class="infos8">Entrar</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body">
+                    <tr class="conteudo"></tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
+    </div>
+</body>
+
+<script src="/globals.js"></script>
+<script src="./script.js"></script>

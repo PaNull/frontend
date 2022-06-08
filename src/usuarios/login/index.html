@@ -35,19 +35,19 @@
     <div class="login"  style="margin-top: 5%; margin-bottom: 7.5%">
         <div class="content">
             <h1 id="risco" class="title textoRisco" >Faça seu login:</h1>
-            <form name="formularioLogin">
+            <form name="formularioLogin" action="/login/teste" method="post">
                 <p class="pUser">User:</p>
                 <input type="text" name="login" placeholder="Digite seu nome de usuário..." class="inputUsuario"><br>
                 <p class="pPassword">Password:</p>
                 <input type="text" name="password" placeholder="Digite sua senha..." class="inputPassword"><br>
 
-                <input type="button" value="Logar" class="inputLogar" onclick="aaaaa()">
+                <input type="submit" value="Logar" class="inputLogar" >
             </form>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="/globals.js"></script>
-    <script src="/usuarios/login/script.js"></script>
+   <!--  <script src="/usuarios/login/script.js"></script> -->
 </body>
 </html>

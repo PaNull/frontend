@@ -1,10 +1,16 @@
 const pagePerfil = '/usuarios/perfil'
 
-function aaaaa(){
-    let email = document.getElementsByName("login")[0].value
+
+function logando(email, password){
+    const URL_API = 'https://fho-project-application.herokuapp.com/api/'
+    const fetch = require("node-fetch");
+
+   /*  let email = document.getElementsByName("login")[0].value
     let password = document.getElementsByName("password")[0].value
 
-    var info = new Boolean(false)
+    var info = new Boolean(false) */
+
+    //console.log('entrou no logando!')
 
     const payload = {
         email: email,
@@ -25,78 +31,66 @@ function aaaaa(){
         if (!data.ok) {
             throw Error(data.status);
         }
+        console.log(data)
+        
         return data.json();
 
     }).then(payload => {
-
-        /* console.log(payload);
-        console.log('Deu certo')
-        console.log(payload.data) */
-
-        if (payload?.data) {
-            //logado com sucesso
-
-            //Criando a Sessão:
-            // Salva os dados na sessionStorage
-            sessionStorage.setItem('user', payload.data.nome);
-            //                      'chave', 'valor'
-
-            // Obtém os dados da sessionStorage
-            //var data = sessionStorage.getItem('chave');
-    
-            sessaoUsuario = payload.data.nome
-
-            //res.render(pagePerfil)
-            window.location.href = pagePerfil
-
-       /*      res.render(pagePerfil, {
-                login: payload.data.nome,
-                nome: payload.data.nome,
-                email: payload.data.email,
-                dataNasc: payload.data.dataNascimento,
-                cpf: payload.data.cpf,
-                nacionalidade: payload.data.nacionalidade,
-                cargo: payload.data.cargo                
-            }); */
-        }
+        console.log("FoI!")
+        if (payload?.data) {        
+            
+    }
 
     }).catch(e => {
         console.log('erro e: ' + e);
-        alert("ERRO ao LOGAR usuário!")
+        /* alert("Usuário ou Senha incorreto(s)!") */
     });
-}
-            
 
-
-  
-
-   /*  request(options, function (error, response, body) {
-
-        console.log("Chegou 2", body);
-        
-        if (body?.data) {
-            
-            console.log("Entrou");
-            //logado com sucesso
-            //criando a sessão
-            req.session.login = body.data.nome;
     
-            sessaoUsuario = body.data.nome
+}
 
-            res.render(pagePerfil, {
-                login: body.data.nome,
-                nome: body.data.nome,
-                email: body.data.email,
-                dataNasc: body.data.dataNascimento,
-                cpf: body.data.cpf,
-                nacionalidade: body.data.nacionalidade,
-                cargo: body.data.cargo                
-            }); 
+/* function cria_cookie(nome, valor) {
+    // Cria uma data 01/01/2020
+    var data = new Date(2020,0,01);
+    // Converte a data para GMT
+    data = data.toGMTString();
+    // Codifica o valor do cookie para evitar problemas
+    valor = encodeURI(valor);
+    // Cria o novo cookie
+    document.cookie = nome + '=' + valor + '; expires=' + data + '; path=/';
+}
 
-            //vai para a pag meu perfil passando login, nome, email, dataNasc {...} como parâmetro
 
-            console.log('O meu usuário logado é: ', body.data.nome);
-            
-        } else {
-            res.render(pageLogin);
-        } */
+// Obtém o valor de um cookie
+// Envie o nome do cookie como parâmetro
+function valor_cookie(nome_cookie) {
+    // Adiciona o sinal de = na frente do nome do cookie
+    var cname = ' ' + nome_cookie + '=';
+    
+    // Obtém todos os cookies do documento
+    var cookies = document.cookie;
+    
+    // Verifica se seu cookie existe
+    if (cookies.indexOf(cname) == -1) {
+        return false;
+    }
+    
+    // Remove a parte que não interessa dos cookies
+    cookies = cookies.substr(cookies.indexOf(cname), cookies.length);
+
+    // Obtém o valor do cookie até o ;
+    if (cookies.indexOf(';') != -1) {
+        cookies = cookies.substr(0, cookies.indexOf(';'));
+    }
+    
+    // Remove o nome do cookie e o sinal de =
+    cookies = cookies.split('=')[1];
+    
+    // Retorna apenas o valor do cookie
+    return decodeURI(cookies);
+}
+module.exports = valor_cookie;
+
+module.exports = cria_cookie;
+ */
+module.exports = logando;

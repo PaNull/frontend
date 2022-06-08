@@ -1,0 +1,43 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<div>
+    <div>
+        <!-- Só pode ser acessado por adms -->
+        <h3>Atualizar time</h3>
+        <form name="updateTime">
+            
+            <p>
+                <div>
+                    <label for="nome">Nome do Time</label>
+                    <input type="text" name="nome" placeholder="Digite o Nome do Time">
+                </div>
+                </p>
+
+                <p>
+                <div>
+                    <label for="modalidade">Modalidade</label>
+                    <select name="modalidade">
+                        <option value="disabled" disabled selected>Selecione a modalidade:</option>
+                        <option value="Basquete">Basquete</option>
+                        <option value="Futebol">Futebol</option>
+                        <option value="Futsal">Futsal</option>
+                        <option value="Vôlei">Vôlei</option>
+                    </select>
+                </div>
+                </p>
+
+                <p>
+                <div>
+                    <label for="capitao">Capitão</label>
+                    <input type="int" name="capitao" placeholder="Digite o ID do capitão">
+                </div>  
+                </p>
+           
+            <button onclick="atualizarTeam()">Atualizar</button>
+        </form>
+    </div>
+</div>
+
+<script src="/globals.js"></script>
+<script src="./script.js"></script>

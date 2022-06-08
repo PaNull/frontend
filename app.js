@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'sfdghsakljlojdiowaiowajdioajw',
     resave: true,
     saveUninitialized: true,
     cookie: { secure: true }

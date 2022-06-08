@@ -1,0 +1,69 @@
+<head>
+    <title>Criar Partida</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+                <h1><a href="/" id="logo">NULL Sports</a></h1>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/campeonatos/cadastrar">Crie seu torneio</a></li>
+                        <li><a href="/usuarios/cadastrar">Cadastrar</a></li>
+                        <li><a href="/campeonatos/lista">Torneios em Andamento</a></li>
+                        <li><a href="/usuarios/login">Meu Perfil</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <div class="cadastro" style="margin-top: 30px;">
+        <div class="content">
+            <h3>Partidas</h3>
+            
+            <form name="cadastrarTime">
+                <p>
+                <div>
+                    <label for="timeA">ID do time <b>A</b></label>
+                    <input type="text" name="teamA" placeholder="Digite o nome do Time B">
+                </div>
+                </p>
+
+                <p>
+                    <div>
+                        <label for="timeB">ID do time <b>B</b></label>
+                        <input type="text" name="teamB" placeholder="Digite o nome do Time B">
+                    </div>
+                </p>
+    
+                <p>
+                <div>
+                    <label for="partida">Data da partida</label>
+                    <input type="date" name="data" placeholder="Digite a data da partida">
+                </div>  
+                </p>
+
+                <p>
+                    <div>
+                        <label for="campeonato">ID do campeonato<label>
+                        <input type="int" name="idCamp" placeholder="Digite o ID do campeonato" min=""0>
+                    </div>  
+                </p>
+
+                <input type="button" onclick="cadastrarPartida()" value="Cadastrar">
+
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/globals.js"></script>
+<script src="./script.js"></script>
