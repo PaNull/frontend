@@ -1,0 +1,104 @@
+<head>
+    <title>Edição</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/Style/styleindex.css">
+</head>
+
+<body>
+    <div>
+        <div>
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+
+                    <!-- Logo -->
+                    <h1><a href="/" id="logo">NULL Sports</a></h1>
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/campeonatos/cadastrar">Crie seu torneio</a></li>
+                            <li><a href="/usuarios/cadastrar">Cadastrar</a></li>
+                            <li class="current_page_item"><a href="/campeonatos/lista">Torneios em Andamento</a></li>
+                            <li><a href="/usuarios/login">Meu Perfil</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="cadastro" style="margin-top: 30px;">
+                <div class="content">
+                    <div id="especificCamp">
+                        <!-- Só pode ser acessado por adms -->
+                        <h3>Atualizar Campeonato</h3>
+                        <form name="updateTournament">
+
+                            <p>
+                                <div>
+                                    <label for="nome">Nome do Campeonato</label>
+                                    <br>
+                                    <input type="text" name="nome" placeholder="Digite o Nome do Campeonato">
+                                </div>
+                            </p>
+
+                            <p>
+                                <div>
+                                    <label for="modalidade">Modalidade</label>
+                                    <br>
+                                    <select name="modalidade">
+                                        <option value="disabled" disabled selected>Selecione a modalidade:</option>
+                                        <option value="Basquete">Basquete</option>
+                                        <option value="Futebol">Futebol</option>
+                                        <option value="Futsal">Futsal</option>
+                                        <option value="Vôlei">Vôlei</option>
+                                    </select>
+                                </div>
+                            </p>
+
+                            <p>
+                                <div>
+                                    <label for="premiacao">Premiação</label>
+                                    <br>
+                                    <input type="text" name="premiacao" placeholder="Digite a Premiação">
+                                </div>
+                            </p>
+
+                            <p>
+                                <div>
+                                    <label for="dataCampeonato">Data de início do campeonato</label>
+                                    <br>
+                                    <input type="date" name="dataStartCamp">
+                                </div>
+                            </p>
+
+                            <p>
+                                <div>
+                                    <label for="dataCampeonato">Data de término do campeonato</label>
+                                    <br>
+                                    <input type="date" name="dataEndCamp">
+                                </div>
+                            </p>
+
+                            <p>
+                                <div>
+                                    <label for="qtdTimes">Quantidade de times</label>
+                                    <br>
+                                    <input type="number" name="qtdTimes" min="2" max="300"
+                                        placeholder="Digite a Quantidade de Times">
+                                </div>
+                            </p>
+
+                            <button onclick="atualizarTorneio()">Atualizar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/globals.js"></script>
+<script src="./script.js"></script>

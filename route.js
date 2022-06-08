@@ -1,6 +1,27 @@
 const express = require('express');
 const router = express.Router();
 var request = require('request');
+const bodyParsers = require('body-parser')
+
+var logar = require("./src/usuarios/login/script");
+
+var cria_cookie = require("./src/usuarios/login/script");
+
+var valor_cookie = require("./src/usuarios/login/script");
+
+
+// Importing express-session module
+const session = require("express-session")
+  
+// Importing file-store module
+const filestore = require("session-file-store")(session)
+  
+// Setting up the server
+var app = express()
+
+
+
+
 
 /* Body Parser */
 
@@ -34,8 +55,8 @@ router.get("/campeonatos/update", function(req, res){
     hasSession(req, res, './campeonatos/update/index')
 })
 
-router.get("/campeonatos/listaadm", function(req, res){
-    hasSession(req, res, './campeonatos/listaAdm/index')
+router.get("/campeonatosView/lista", function(req, res){
+    res.render('./campeonatosView/lista/index')
 })
 
 router.get("/usuarios/cadastrar", function(req, res){
@@ -57,6 +78,40 @@ router.get("/usuarios/update", function(req, res){
 router.get("/login", function(req, res){
     res.render('./usuarios/login/index')
 })
+ 
+router.post("/login/teste", function(req, res){
+    
+    const pagePerfil = '/usuarios/perfil'
+
+    let email = req.body.login; //pega a informação do campo enviado por POST
+    let password = req.body.password;
+
+    console.log(email, password)
+    
+    //FETCH POST
+    logar(email, password);
+
+    //CRIAR A SESSAO
+    req.session.email = email
+    req.session.password = password
+
+    console.log(req.session.email)
+
+    if(req.session.email){
+        console.log('entrou no req session')
+        res.render('./usuarios/perfil/index')
+    }
+    else{
+        res.render('/login', )
+    }
+    //teste com cookie
+    //document.cookie = "campanha=Promo50; expires=Mon, 29 Oct 2018 12:00:00 UTC; path=/";
+
+    /* cria_cookie(email, password);
+
+    valor_cookie(email); */
+    
+}) 
 
 router.get("/times/cadastrar", function(req, res){
     res.render('./times/cadastrar/index')
@@ -66,8 +121,24 @@ router.get("/times/lista", function(req, res){
     res.render('./times/lista/index')
 })
 
+router.get("/times/listaView", function(req, res){
+    res.render('./times/update/index')
+})
+
 router.get("/times/update", function(req, res){
     res.render('./times/update/index')
+})
+
+router.get("/partidas/cadastrar", function(req, res){
+    res.render('./partidas/cadastrar/index')
+})
+
+router.get("/partidas/lista", function(req, res){
+    res.render('./partidas/lista/index')
+})
+
+router.get("/partidas/update", function(req, res){
+    res.render('./partidas/update/index')
 })
 
 router.get("/sobreProjeto", function(req, res){
