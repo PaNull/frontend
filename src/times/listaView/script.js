@@ -1,5 +1,4 @@
-let teste = usuarioLogado
-console.log(teste)
+console.log(meuUser.id_usuario)
 
 var list = [];
 
@@ -13,7 +12,6 @@ const createRowsEspecific = () => {
                 <td> ${ data.id_time } </td>
                 <td> ${ data.nome } </td>
                 <td> ${ data.modalidade } </td>
-                <td> ${ data.capitao } </td>
                 <td> <input type="button" onclick="confirmar(${data.id_time})" value="Entrar" class="btnEntrar"></td>   
             </tr> 
         `
@@ -28,7 +26,6 @@ const createRows = () => {
                 <td> ${ data.id_time } </td>
                 <td> ${ data.nome } </td>
                 <td> ${ data.modalidade } </td>
-                <td> ${ data.capitao } </td>
                 <td> <input type="button" onclick="confirmar(${data.id_time})" value="Entrar" class="btnEntrar"></td>   
             </tr>
         `
@@ -126,8 +123,9 @@ function funcaoNoTime(){
 
 function entrarTime(id, funcao){
 
+
     const payload = {
-        userId: "any",
+        userId: meuUser.id_usuario,
         teamId: id,
         funcao: funcao
     }
@@ -157,7 +155,7 @@ function entrarTime(id, funcao){
             alert("ERRO ao Cadastrar Time!")
         });
 
-        alert("Time Cadastrado com Sucesso!")
+        alert("Você entrou no time!") 
         window.location.href = '/times/listaView'
 
 }
