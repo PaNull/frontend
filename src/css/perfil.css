@@ -1,3 +1,7 @@
+body{
+    height: auto;
+}
+
 .widget-container {
     -webkit-border-radius: 2px;
     -webkit-background-clip: padding-box;
@@ -150,8 +154,9 @@
     -ms-transform: skew(0deg, 10deg);
     transform: skew(0deg, 10deg);
     color: #fff;
-    width: 400px;
+    width: 900px;
     font-size: 16px;
+    margin-left: 110px;
 }
 
 .profile-card .card-footer {
@@ -224,6 +229,77 @@
 }
 
 .profile-card{
-    margin-left: 27rem;
-    margin-right: 15.4%;
+    margin-left: -15%;
+}
+
+.btnLogout{
+    margin-left: 45%
+}
+
+.hPerfil{
+    margin-left: 45%
+}
+
+.content{
+    width: 900px;
+    margin: 0px auto;
+    position: relative;
+}
+
+
+
+th {
+    color:#000000;;
+    background:#ffff00;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    padding:10px;
+    text-align:center;
+    vertical-align:middle;
+    width: 10%;
+  }
+    
+  tr {
+    border-top: 1px solid #C1C3D1;
+    color:#666B85;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+  }
+   
+  tr:hover td {
+    background:#4E5066;
+    color:#FFFFFF;
+    border-top: 1px solid #22262e;
+  }
+   
+  td {
+    background:#FFFFFF;
+    padding:10px;
+    text-align:center;
+    vertical-align:middle;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+  }
+ thead{
+    border-style: solid;
+ }
+
+
+ .infosTable{    /* Id */
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;
+  border: 3px solid #066a75;
+  padding-top: 10px;
+}
+
+.infos_users{
+  text-align: center;
+  color: rgb(66, 74, 77);
+  border-left: 2px solid #066a75;
+  border-right: 2px solid #066a75;
+  border-bottom: 2px solid #066a75;
+  width: 10%;
+  padding-right: 5px;
+  padding-left: 5px;
 }
