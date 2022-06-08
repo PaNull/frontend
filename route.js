@@ -57,8 +57,8 @@ router.get("/campeonatos/update", function(req, res){
     hasSession(req, res, './campeonatos/update/index')
 })
 
-router.get("/campeonatosView/lista", function(req, res){
-    res.render('./campeonatosView/lista/index')
+router.get("/campeonatos/listaView", function(req, res){
+    res.render('./campeonatos/listaView/index')
 })
 
 router.get("/usuarios/cadastrar", function(req, res){
@@ -136,7 +136,7 @@ router.get("/partidas/update", function(req, res){
     res.render('./partidas/update/index')
 })
 
-router.get("/sobreProjeto", function(req, res){
+router.get("/sobre", function(req, res){
     res.render('./sobreProjeto/index')
 })
 
