@@ -2,18 +2,31 @@ usuarioLogado = JSON.parse(user.replace(/&#34;/g,'"'));
 console.log(usuarioLogado)
 
 
+var list = [];
 
-/* const logout = (nome) => {
-const pageLogin = 'usuarios/login/index'
+list = usuarioLogado;
 
-    const request = {
-        type:'GET',
-        url:'localhost:3000/logout',
-        dataType: "json",
-        success: function(response) {
-            alert(response.message)
-        }
-    };
-    //window.location.href="../login/index.html"
-    res.render(pageLogin)
-} */
+const createRows = () => {
+   
+        row = `
+            <tr>
+                <td class="infos_users"> ${ usuarioLogado.id_usuario } </td>
+                <td class="infos_users"> ${ usuarioLogado.nome } </td>
+                <td class="infos_users"> ${ usuarioLogado.cargo } </td>
+                <td class="infos_users"> ${ usuarioLogado.cpf } </td>
+                <td class="infos_users"> ${ usuarioLogado.dataNascimento } </td>
+                <td class="infos_users"> ${ usuarioLogado.nacionalidade } </td>     
+            </tr>
+        `
+        $("#table_body tr:last").after(row) ;
+        console.log(usuarioLogado.id_usuario)
+}
+
+
+createRows()
+
+function logout(){
+    
+    usuarioLogado = null
+    window.location.href = '/'
+}
